@@ -1,0 +1,16 @@
+export default function GhostCard({ ghost }) {
+  return (
+    <a href={`/ghosts/${ghost.id}`} className="ghost-card">
+      <div className="ghost-name">
+        {ghost.name}
+        {ghost.threshold && (<span className="ghost-tag">{ghost.threshold}</span>)}
+      </div>
+      <div className="ghost-evidence">
+        {ghost.evidenceNames.map((ev, index) => (
+          <span key={index} className="ev-tag">{ev}</span>
+        ))}
+      </div>
+      <div className="ghost-desc">{ghost.desc}</div>
+    </a>
+  );
+}
