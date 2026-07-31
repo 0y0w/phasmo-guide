@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export default function GhostCard({ ghost }) {
   return (
-    <a href={`/ghosts/${ghost.id}`} className="ghost-card">
+    <Link to={`/ghosts/${ghost.id}`} className="ghost-card">
       <div className="ghost-name">
         {ghost.name}
         {ghost.threshold && (<span className="ghost-tag">{ghost.threshold}</span>)}
@@ -11,6 +13,6 @@ export default function GhostCard({ ghost }) {
         ))}
       </div>
       <div className="ghost-desc">{ghost.desc}</div>
-    </a>
+    </Link>
   );
 }

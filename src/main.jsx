@@ -9,7 +9,7 @@ import './App.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/phasmophobia'>
       <Routes>
         <Route path="/" element={<App />} />
 
