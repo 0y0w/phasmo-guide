@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Header from '../Header';
 import '../App.css'
 
@@ -81,6 +81,21 @@ export default function Ghost() {
   // 1. 取得該鬼魂對應的專屬組件
   const Data = ghostsData.find((ghost) => ghost.id === ghostId); 
   const CustomContent = ghostComponents[ghostId];
+
+  if (!Data) {
+    return (
+      <div className="container">
+        <Header />
+        <main className="main-content" style={{ textAlign: 'center', padding: '50px' }}>
+          <h1>不要再亂打了!</h1>
+          <p>系統中不存在名為「{ghostId}」的鬼魂。</p>
+          <Link to="/" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>
+            點此返回首頁
+          </Link>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
