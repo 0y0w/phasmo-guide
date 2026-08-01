@@ -4,8 +4,8 @@ import '../../App.css'
 import '../Ghost.css'
 import { ghostsData } from '../../data';
 
-export default function Yurei() {
-  const Data = ghostsData.find((ghost) => ghost.id === 'Yurei');
+export default function The mimic() {
+  const Data = ghostsData.find((ghost) => ghost.id === 'The mimic');
 
   return (
     <div>

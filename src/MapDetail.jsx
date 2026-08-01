@@ -1,0 +1,46 @@
+import { useParams, Link } from 'react-router-dom';
+import Header from './Header'; // 記得引入你的 Header
+import { maps } from './data'; // 引入你的地圖資料陣列
+
+import './App.css'
+
+export default function MapDetail() {
+  // 1. 從網址取得 mapId (例如網址是 /maps/tanglewood，mapId 就是 'tanglewood')
+  const { mapId } = useParams();
+  
+  // 2. 去資料庫尋找對應的地圖
+  const mapData = maps.find(m => m.id === mapId);
+
+  if (!mapData) {
+    return (
+      <div className="container">
+        <Header activePage='Maps'/>
+        <main className="main-content" style={{ textAlign: 'center', padding: '50px' }}>
+          <h2>不要再亂打了!</h2>
+          <p>系統中不存在代號為「{mapId}」的調查地點。</p>
+          <Link to="/Maps" style={{ color: 'var(--primary)', textDecoration: 'underline', marginTop: '20px', display: 'inline-block' }}>
+            點此返回地圖列表
+          </Link>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="container">
+      <Header activePage='Maps'/>
+      <main className="main-content">
+        <div className="section-header">
+          <h1 className="section-title">{ mapData.name }<udt>Update: 2026.08.01</udt></h1>
+        </div>
+
+        <section className="map-area">          
+          <div className='map-dis'><img src={`${import.meta.env.BASE_URL}maps/${mapData.imgName}.png`} alt={mapData.name} /></div>
+          <div className='map-desc-grid'>
+            <div className='map-desc-content'>來源：<Link to="https://tybayn.github.io/phasmo-cheat-sheet/" className='link'>Phasmophobia Cheat Sheet</Link></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}

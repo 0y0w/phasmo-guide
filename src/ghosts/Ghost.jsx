@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import Header from '../Header';
 import '../App.css'
+import './Ghost.css'
 
 import { ghostsData } from '../data';
 
@@ -85,7 +86,7 @@ export default function Ghost() {
   if (!Data) {
     return (
       <div className="container">
-        <Header />
+        <Header activePage='Ghosts'/>
         <main className="main-content" style={{ textAlign: 'center', padding: '50px' }}>
           <h1>不要再亂打了!</h1>
           <p>系統中不存在名為「{ghostId}」的鬼魂。</p>
@@ -104,10 +105,21 @@ export default function Ghost() {
       <main className="main-content">
         <div className="section-header">
           <h1 className="section-title">
-            {Data.name}
+            {Data.name} {Data.id}
             {Data.evidenceNames.map((ev, index) => (<span key={index} className="section-tag">{ev}</span>))}
-            <udt>Update: 8月1日</udt>
+            <udt>Update: 2026.08.01</udt>
           </h1>
+        </div>
+        <div className='desc-block'>
+          <h2 className='desc-title'>鬼魂身分證</h2>
+          <div className='idty-grid'>
+            <div className='idty-content'>性別：{Data.gender}</div>
+            <div className='idty-content'>基礎移度：{Data.basicSpeed} m/s</div>
+            <div className='idty-content'>獵殺閾值：{Data.threshold} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
+            <div className='idty-content'>視野加速：{Data.acc}</div>
+            <br />
+          </div>
+          <div className='idty-desc'>{Data.desc}</div>
         </div>
         {CustomContent ( <CustomContent /> )}
       </main>

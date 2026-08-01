@@ -5,7 +5,7 @@ export default function GhostCard({ ghost }) {
     <Link to={`/ghosts/${ghost.id}`} className="ghost-card">
       <div className="ghost-name">
         {ghost.name}
-        {ghost.threshold && (<span className="ghost-tag">{ghost.threshold}</span>)}
+        {ghost.tag && (<span className="ghost-tag">{ghost.tag}</span>)}
       </div>
       <div className="ghost-evidence">
         {ghost.evidenceNames.map((ev, index) => (

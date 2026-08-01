@@ -19,7 +19,7 @@ export default function Header({ activePage = 'ghosts' }) {
         <div className="dropdown">
           <Link to="" className="nav-item">其他</Link>
           <div className="dropdown-content">
-            <Link to="/Acheivement">成就</Link>
+            <Link to="/Achievement">成就</Link>
           </div>
         </div>
       </nav>

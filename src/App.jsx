@@ -34,7 +34,7 @@ export default function App() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">鬼魂<udt>Update: 7月31日</udt></h1>
+          <h1 className="section-title">鬼魂<udt>Update: 2026.07.31</udt></h1>
         </div>
 
         {/* 證據篩選工具面板 */}
