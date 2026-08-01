@@ -1,7 +1,7 @@
 
 import './App.css';
 import Header from './Header';
-import { ghostsData } from './Data.jsx'
+import { ghostsData } from './data.jsx'
 import SoundPlayer from './audioPlayer.jsx';
 
 export default function GhostSpeed() {
