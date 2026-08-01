@@ -4,7 +4,7 @@ export default function GhostCard({ ghost }) {
   return (
     <Link to={`/ghosts/${ghost.id}`} className="ghost-card">
       <div className="ghost-name">
-        {ghost.name}
+        {ghost.name} {ghost.id}
         {ghost.tag && (<span className="ghost-tag">{ghost.tag}</span>)}
       </div>
       <div className="ghost-evidence">
