@@ -1,4 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 import Header from './Header'; // 記得引入你的 Header
 import { maps } from './data'; // 引入你的地圖資料陣列
 
@@ -35,9 +37,16 @@ export default function MapDetail() {
         </div>
 
         <section className="map-area">          
-          <div className='map-dis'><img src={`${import.meta.env.BASE_URL}maps/${mapData.imgName}.png`} alt={mapData.name} /></div>
+          <div className='map-dis'>
+            <TransformWrapper initialScale={1} minScale={1} maxScale={5} centerOnInit={true} wheel={{ step: 0.005 }} panning={{ velocityDisabled: true }}>
+              <TransformComponent wrapperStyle={{ width: "100%", height: "100%" }}>
+                <img src={`${import.meta.env.BASE_URL}maps/${mapData.imgName}.png`} alt={mapData.id} />
+              </TransformComponent>
+            </TransformWrapper>
+            
+            </div>
           <div className='map-desc-grid'>
-            <div className='map-desc-content'>來源：<Link to="https://tybayn.github.io/phasmo-cheat-sheet/" className='link'>Phasmophobia Cheat Sheet</Link></div>
+            <div className='map-desc-content'>來源：<Link to="https://tybayn.github.io/phasmo-cheat-sheet/" target='_blank' rel='noopener noreferrer' className='link'>Phasmophobia Cheat Sheet</Link></div>
           </div>
         </section>
       </main>

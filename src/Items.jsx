@@ -15,7 +15,7 @@ export default function Items() {
         <div>
         內容待新增...
           <br />
-          <Link to="https://phasmophobia.fandom.com/zh/wiki/裝備" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>
+          <Link to="https://phasmophobia.fandom.com/zh/wiki/裝備" target='_blank' rel='noopener noreferrer' className='link'>
             前往官方維基
           </Link>
         </div>

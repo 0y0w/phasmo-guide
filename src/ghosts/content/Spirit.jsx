@@ -11,7 +11,7 @@ export default function Spirit() {
     <div>
       內容待新增...
       <br />
-      <Link to={`https://phasmophobia.fandom.com/zh/wiki/${Data.name}`} style={{ color: 'var(--primary)', textDecoration: 'underline' }}>
+      <Link to={`https://phasmophobia.fandom.com/zh/wiki/${Data.name}`} target='_blank' rel='noopener noreferrer' className='link'>
             前往官方維基
       </Link>
     </div>

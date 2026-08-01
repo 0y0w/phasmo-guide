@@ -114,7 +114,7 @@ export default function Ghost() {
           <h2 className='desc-title'>鬼魂身分證</h2>
           <div className='idty-grid'>
             <div className='idty-content'>性別：{Data.gender}</div>
-            <div className='idty-content'>基礎移度：{Data.basicSpeed} m/s</div>
+            <div className='idty-content'>基礎移度：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
             <div className='idty-content'>獵殺閾值：{Data.threshold} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
             <div className='idty-content'>視野加速：{Data.acc}</div>
             <br />
