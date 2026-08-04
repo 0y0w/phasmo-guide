@@ -499,7 +499,14 @@ export const items = [
         name: '點陣投影儀',
         desc: '點陣投影儀是能投出點陣的電子設備。有概率照出鬼魂的輪廓，即點陣投影儀證據。',
         tag: 'ev',
-        content: []
+        content: [
+        [
+          {
+            title: '',
+            text: '',
+          }
+        ]
+        ]
     },
     {
         id: 'UVLight',
