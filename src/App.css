@@ -19,7 +19,7 @@ body { background: var(--background); color: var(--text-primary); padding: 20px;
 .container { width: 100%; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
 
 /* General */
-.link { color: var(--primary); text-decoration: underline; margin-left: 8px}
+.link { color: var(--primary); text-decoration: underline; }
 .desc-block { background: var(--card-bg); border-radius: var(--radius-lg); padding: 18px; border: 1px solid var(--intensity-8); margin-bottom: 24px; }
 .desc-title { font-size: 20px; font-weight: 500; margin-bottom: 16px; }
 
