@@ -20,7 +20,7 @@ export default function MapDetail() {
         <main className="main-content" style={{ textAlign: 'center', padding: '50px' }}>
           <h2>不要再亂打了!</h2>
           <p>系統中不存在代號為「{mapId}」的調查地點。</p>
-          <Link to="/Maps" style={{ color: 'var(--primary)', textDecoration: 'underline', marginTop: '20px', display: 'inline-block' }}>
+          <Link to="/maps" style={{ color: 'var(--primary)', textDecoration: 'underline', marginTop: '20px', display: 'inline-block' }}>
             點此返回地圖列表
           </Link>
         </main>
@@ -33,7 +33,7 @@ export default function MapDetail() {
       <Header activePage='Maps'/>
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">{ mapData.name }<udt>Update: 2026.08.01</udt></h1>
+          <h1 className="section-title">{ mapData.name }<dt>Update: 2026.08.01</dt></h1>
         </div>
 
         <section className="map-area">          
@@ -44,7 +44,7 @@ export default function MapDetail() {
               </TransformComponent>
             </TransformWrapper>
             
-            </div>
+          </div>
           <div className='map-desc-grid'>
             <div className='map-desc-content'>來源：<Link to="https://tybayn.github.io/phasmo-cheat-sheet/" target='_blank' rel='noopener noreferrer' className='link'>Phasmophobia Cheat Sheet</Link></div>
           </div>

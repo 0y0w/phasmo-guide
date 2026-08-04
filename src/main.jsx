@@ -8,27 +8,33 @@ import Maps from './Maps.jsx'
 import Challenges from './Challenges.jsx'
 import Tutorial from './Tutorial.jsx'
 import GhostSpeed from './GhostSpeed.jsx'
+import GhostThreshold from './GhostThreshold.jsx'
 import Achievement from './Achievement.jsx'
 
 import Ghost from './ghosts/Ghost.jsx'   
 import MapDetail from './MapDetail.jsx'
+import ItemDetail from './ItemDetail.jsx'
 
 import './App.css'
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename='/phasmophobia'>
+    <BrowserRouter basename='/phasmo-guide'>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/Items" element={<Items />} />
-        <Route path="/Maps" element={<Maps />} />
-        <Route path="/Challenges" element={<Challenges />} />
-        <Route path="/Tutorial" element={<Tutorial />} />
-        <Route path="/GhostSpeed" element={<GhostSpeed />} />
-        <Route path="/Achievement" element={<Achievement />} />
+        <Route path="/items" element={<Items />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/challenges" element={<Challenges />} />
+        <Route path="/tutorial" element={<Tutorial />} />
+        <Route path="/ghostSpeed" element={<GhostSpeed />} />
+        <Route path="/ghostThreshold" element={<GhostThreshold />} />
+
+        <Route path="/achievement" element={<Achievement />} />
 
         <Route path="/ghosts/:ghostId" element={<Ghost />} />
         <Route path="/maps/:mapId" element={<MapDetail />} />
+        <Route path='/items/:itemId' element={<ItemDetail />} />
 
         <Route path="*" element={<App />} />
       </Routes>

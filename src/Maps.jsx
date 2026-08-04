@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './Header';
 
-import MapCard from './MapCard';
+import { MapCard } from './Card';
 import { maps } from './data'
 
 export default function Maps() {
@@ -15,7 +15,7 @@ export default function Maps() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">地圖<udt>Update: 2026.08.01</udt></h1>
+          <h1 className="section-title">地圖<dt>Update: 2026.08.01</dt></h1>
         </div>
         <div>
           <div className='map-area'>

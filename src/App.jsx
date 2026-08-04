@@ -1,31 +1,44 @@
 import { useState } from 'react';
 import './App.css';
 import Header from './Header';
-import GhostCard from './GhostCard';
+import { GhostCard } from './Card';
 import { evidences, ghostsData } from './data';
 
 export default function App() {
   // 記錄目前被選中的證據 ID（例如: ['emf', 'box']）
   const [activeEvidence, setActiveEvidence] = useState([]);
+  const [rejectedEvidence, setRejectedEvidence] = useState([]);
 
   // 點擊證據按鈕的處理函數
   const toggleEvidence = (id) => {
     if (activeEvidence.includes(id)) {
-      // 如果已經選了，就取消選取
+      // 若目前為「包含」，切換為「排除」
       setActiveEvidence(activeEvidence.filter(evId => evId !== id));
+      setRejectedEvidence([...rejectedEvidence, id]);
+    } else if (rejectedEvidence.includes(id)) {
+      // 若目前為「排除」，切換回「未選」
+      setRejectedEvidence(rejectedEvidence.filter(evId => evId !== id));
     } else {
-      // 如果還沒選，就加入清單
+      // 若目前為「未選」，切換為「包含」
       setActiveEvidence([...activeEvidence, id]);
     }
+  };
+  const handleRightClick = (e, id) => {
+    e.preventDefault(); // 阻止瀏覽器預設的右鍵選單
+    
+    setRejectedEvidence(rejectedEvidence.filter(evId => evId !== id));
+    setActiveEvidence(activeEvidence.filter(evId => evId !== id));
   };
 
   // 根據選中的證據，過濾鬼魂名單
   const filteredGhosts = ghostsData.filter(ghost => {
-    // 如果沒有選任何證據，顯示全部
-    if (activeEvidence.length === 0) return true;
+    // 條件 1：必須擁有「所有」被 active 的證據
+    const hasAllActive = activeEvidence.every(ev => ghost.evidence.includes(ev));
     
-    // 檢查該鬼魂是否包含「所有」被選中的證據
-    return activeEvidence.every(ev => ghost.evidence.includes(ev));
+    // 條件 2：不能擁有「任何」被 rejected 的證據
+    const hasNoRejected = rejectedEvidence.every(ev => !ghost.evidence.includes(ev));
+    
+    return hasAllActive && hasNoRejected;
   });
 
   return (
@@ -34,24 +47,31 @@ export default function App() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">鬼魂<udt>Update: 2026.07.31</udt></h1>
+          <h1 className="section-title">鬼魂<dt>Update: 2026.07.31</dt></h1>
         </div>
 
         {/* 證據篩選工具面板 */}
         <section className="tool-panel">
-          <div className="panel-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>證據篩選</div>
+          <div className="panel-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>證據篩選</div>
           <div className="evidence-grid">
-            {evidences.map((ev) => (
-              <div 
-                key={ev.id}
-                // 如果這個證據在 activeEvidence 陣列裡，就加上 active class
-                className={`ev-btn ${activeEvidence.includes(ev.id) ? 'active' : ''}`}
-                onClick={() => toggleEvidence(ev.id)}
-              >
-                {ev.icon}
-                {ev.name}
-              </div>
-            ))}
+            {evidences.map((ev) => {
+              // 判斷當前按鈕狀態，給予對應的 class
+              let btnClass = 'ev-btn';
+              if (activeEvidence.includes(ev.id)) btnClass += ' active';
+              if (rejectedEvidence.includes(ev.id)) btnClass += ' rejected';
+
+              return (
+                <div 
+                  key={ev.id}
+                  className={btnClass}
+                  onClick={() => toggleEvidence(ev.id)}
+                  onContextMenu={(e) => handleRightClick(e, ev.id)} // 綁定右鍵事件
+                >
+                  {ev.icon}
+                  {ev.name}
+                </div>
+              );
+            })}
           </div>
         </section>
 

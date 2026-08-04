@@ -4,14 +4,14 @@ import '../../App.css'
 import '../Ghost.css'
 import { ghostsData } from '../../data';
 
-export default function Phantom() {
-  const Data = ghostsData.find((ghost) => ghost.id === 'Phantom');
+export default function phantom() {
+  const Data = ghostsData.find((ghost) => ghost.id === 'phantom');
 
   return (
     <div>
       內容待新增...
       <br />
-      <Link to={`https://phasmophobia.fandom.com/zh/wiki/${Data.name}`} target='_blank' rel='noopener noreferrer' className='link'>
+      <Link to={`https://phasmophobia.fandom.com/zh/wiki/${Data.name.split(" ")[0]}`} target='_blank' rel='noopener noreferrer' className='link'>
             前往官方維基
       </Link>
     </div>

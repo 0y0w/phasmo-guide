@@ -43,36 +43,36 @@ import Yurei from './content/Yurei';
 const ghostComponents = {
   Template: Template,
 
-  Aswang: Aswang,
-  Banshee: Banshee,
-  Dayan: Dayan,
-  Deildegast: Deildegast,
-  Demon: Demon,
-  Deogen: Deogen,
-  Gallu: Gallu,
-  Goryo: Goryo,
-  Hantu: Hantu,
-  Jinn: Jinn,
-  Kormos: Kormos,
-  Mare: Mare,
-  Moroi: Moroi,
-  Myling: Myling,
-  Obake: Obake,
-  Obambo: Obambo,
-  Oni: Oni,
-  Onryo: Onryo,
-  Phantom: Phantom,
-  Poltergeist: Poltergeist,
-  Raiju: Raiju,
-  Revenant: Revenant,
-  Shade: Shade,
-  Spirit: Spirit,
-  Thaye: Thaye,
-  TheMimic: TheMimic,
-  TheTwins: TheTwins,
-  Wraith: Wraith,
-  Yokai: Yokai,
-  Yurei: Yurei
+  aswang: Aswang,
+  banshee: Banshee,
+  dayan: Dayan,
+  deildegast: Deildegast,
+  demon: Demon,
+  deogen: Deogen,
+  gallu: Gallu,
+  goryo: Goryo,
+  hantu: Hantu,
+  jinn: Jinn,
+  kormos: Kormos,
+  mare: Mare,
+  moroi: Moroi,
+  myling: Myling,
+  obake: Obake,
+  obambo: Obambo,
+  oni: Oni,
+  onryo: Onryo,
+  phantom: Phantom,
+  poltergeist: Poltergeist,
+  raiju: Raiju,
+  revenant: Revenant,
+  shade: Shade,
+  spirit: Spirit,
+  thaye: Thaye,
+  theMimic: TheMimic,
+  theTwins: TheTwins,
+  wraith: Wraith,
+  yokai: Yokai,
+  yurei: Yurei
   // 未來有新排版的鬼，在這裡補上一行即可
 };
 
@@ -105,17 +105,17 @@ export default function Ghost() {
       <main className="main-content">
         <div className="section-header">
           <h1 className="section-title">
-            {Data.name} {Data.id}
+            {Data.name}
             {Data.evidenceNames.map((ev, index) => (<span key={index} className="section-tag">{ev}</span>))}
-            <udt>Update: 2026.08.01</udt>
+            <dt>Update: 2026.08.01</dt>
           </h1>
         </div>
         <div className='desc-block'>
           <h2 className='desc-title'>鬼魂身分證</h2>
           <div className='idty-grid'>
             <div className='idty-content'>性別：{Data.gender}</div>
-            <div className='idty-content'>基礎移度：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
-            <div className='idty-content'>獵殺閾值：{Data.threshold} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
+            <div className='idty-content'><Link to="/ghostSpeed" className='link'>基礎移度</Link>：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
+            <div className='idty-content'><Link to="/ghostThreshold" className='link'>獵殺閾值</Link>：{Data.threshold.filter(p => p!=="" && p!=="*").join(" | ")} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
             <div className='idty-content'>視野加速：{Data.acc}</div>
             <br />
           </div>
