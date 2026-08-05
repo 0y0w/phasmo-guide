@@ -713,17 +713,17 @@ export const items = [
         {
           title: '一級',
           text: '檢測範圍 3 米。麥克風指示亮紅光，表示正在聆聽玩家語音，鬼魂指示閃爍紅光表示成功判定語句但沒回應，閃爍白光表示有回應。',
-          imgPath: 'book_T1.webp'
+          imgPath: 'spiritbox_T1.webp'
         },
         {
           title: '二級',
           text: '檢測範圍 4 米。螢幕左上角麥克風圖標閃爍，表示正在聆聽玩家語音，閃爍 X 表示鬼聽到問題但沒回應，閃爍鬼魂圖標表示有回應。',
-          imgPath: 'book_T2.webp'
+          imgPath: 'spiritbox_T2.webp'
         },
         {
           title: '三級',
           text: '檢測範圍 5 米。MIC INPUT 指示燈發亮，表示正在聆聽玩家語音，RESPONSE 指示燈閃爍紅光表示鬼聽到問題但沒回應，閃爍白光表示有回應。',
-          imgPath: 'book_T3.webp'
+          imgPath: 'spiritbox_T3.webp'
         },
         {
           title: '使用技巧',
