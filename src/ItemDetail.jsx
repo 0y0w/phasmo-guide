@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 
 import Header from './Header'; // 記得引入你的 Header
 import { items } from './data'; // 引入你的地圖資料陣列
+import SoundPlayer from './audioPlayer';
 
 import './App.css'
 
@@ -31,17 +32,18 @@ export default function ItemDetail() {
       <Header activePage='Items'/>
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">{ itemData.name }<dt>Update: 2026.08.01</dt></h1>
+          <h1 className="section-title">{ itemData.name }<dt>Update: 2026.08.05</dt></h1>
         </div>
           {itemData.content && itemData.content.map(content =>(
             <div className='item-detail-area'>
               {content.map(c =>(
-                <div className='item-detail-content-area'>
-                  <div>
+                <div className='item-detail-content-block'>
+                  <div className='item-detail-text-area'>
                     <div className='item-detail-title'>{c.title}</div>
                     <div className='item-detail-text'>{c.text}</div>
+                    {c.audio && <div className='item-detail-audio'><SoundPlayer src={`${import.meta.env.BASE_URL}audio/${c.audio.path}.mp3`} />{c.audio.text}</div>}
                   </div>
-                  {c.imgPath && <div className={c.imgClass ? c.imgClass : 'item-detail-img-grid'}><img src={`${import.meta.env.BASE_URL}item/${c.imgPath}`} alt='' /></div>}
+                  {c.imgPath && <div className={c.imgClass ? c.imgClass : 'item-detail-img-grid'}><img src={`${import.meta.env.BASE_URL}item/${c.imgPath}`} alt={c.imgPath} /></div>}
                 </div>
               ))}
             </div>

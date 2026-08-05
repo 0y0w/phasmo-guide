@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.css';
 import Header from './Header';
@@ -7,8 +7,21 @@ import { items } from './data.jsx'
 import { ItemCard } from './Card.jsx';
 
 export default function Items() {
-  const [normalExpanded, setNormalExpanded] = useState(false);
-  const [cursedExpanded, setCursedExpanded] = useState(false);
+  const [normalExpanded, setNormalExpanded] = useState(() => {
+    const saved = localStorage.getItem('ph_normal_expanded');
+    return saved !== null ? JSON.parse(saved) : false;
+  });
+  const [cursedExpanded, setCursedExpanded] = useState(() => {
+    const saved = localStorage.getItem('ph_cursed_expanded');
+    return saved !== null ? JSON.parse(saved) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('ph_normal_expanded', JSON.stringify(normalExpanded));
+  }, [normalExpanded]);
+  useEffect(() => {
+    localStorage.setItem('ph_cursed_expanded', JSON.stringify(cursedExpanded));
+  }, [cursedExpanded]);
 
   const normalItems = items.filter(item => !item.tag.includes("cursed"))
   const cursedItems = items.filter(item => item.tag.includes("cursed"))

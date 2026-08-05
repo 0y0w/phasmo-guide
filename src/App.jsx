@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import { GhostCard } from './Card';
@@ -6,8 +6,22 @@ import { evidences, ghostsData } from './data';
 
 export default function App() {
   // 記錄目前被選中的證據 ID（例如: ['emf', 'box']）
-  const [activeEvidence, setActiveEvidence] = useState([]);
-  const [rejectedEvidence, setRejectedEvidence] = useState([]);
+  const [activeEvidence, setActiveEvidence] = useState(() => {
+    const saved = localStorage.getItem('ph_active_evidence');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [rejectedEvidence, setRejectedEvidence] = useState(() => {
+    const saved = localStorage.getItem('ph_rejected_evidence');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('ph_active_evidence', JSON.stringify(activeEvidence));
+  }, [activeEvidence]);
+
+  useEffect(() => {
+    localStorage.setItem('ph_rejected_evidence', JSON.stringify(rejectedEvidence));
+  }, [rejectedEvidence]);
 
   // 點擊證據按鈕的處理函數
   const toggleEvidence = (id) => {
