@@ -9,7 +9,6 @@ import './App.css'
 export default function ItemDetail() {
   const { itemId } = useParams();
   
-  // 2. 去資料庫尋找對應的地圖
   const itemData = items.find(i => i.id === itemId);
 
   if (!itemData) {
@@ -34,14 +33,14 @@ export default function ItemDetail() {
         <div className="section-header">
           <h1 className="section-title">{ itemData.name }<dt>Update: 2026.08.05</dt></h1>
         </div>
-          {itemData.content && itemData.content.map(content =>(
-            <div className='item-detail-area'>
+          {itemData.content && itemData.content.map((content, index) =>(
+            <div key={`area${index}`} className='item-detail-area'>
               {content.map(c =>(
-                <div className='item-detail-content-block'>
+                <div key={c.title} className='item-detail-content-block'>
                   <div className='item-detail-text-area'>
                     <div className='item-detail-title'>{c.title}</div>
                     <div className='item-detail-text'>{c.text}</div>
-                    {c.audio && <div className='item-detail-audio'><SoundPlayer src={`${import.meta.env.BASE_URL}audio/${c.audio.path}.mp3`} />{c.audio.text}</div>}
+                    {c.audio && <div className='item-detail-audio'><SoundPlayer key={c.audio.text} src={`${import.meta.env.BASE_URL}audio/${c.audio.path}.mp3`} />{c.audio.text}</div>}
                   </div>
                   {c.imgPath && <div className={c.imgClass ? c.imgClass : 'item-detail-img-grid'}><img src={`${import.meta.env.BASE_URL}item/${c.imgPath}`} alt={c.imgPath} /></div>}
                 </div>

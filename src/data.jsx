@@ -571,7 +571,7 @@ export const items = [
           imgPath: 'fingerprint.png'
         },
         {
-          text: '幻妖只有 75% 機率留下紫外線證據，並且留下的紫外線有六分之一的機率多一根手指，如掌印為六指，指印為兩指。\n在缺少 1~2 證據的模式中，幻妖不會缺少紫外線證據。',
+          text: '幻妖只有 75% 機率留下紫外線證據，並且留下的紫外線有六分之一的機率多一根手指，如掌印為六指，指印為兩指。\n\n在缺少 1~2 證據的模式中，幻妖不會缺少紫外線證據。',
           imgPath: 'fingerprint_6.png'
         }
       ]
@@ -704,7 +704,7 @@ export const items = [
     ]
   },
   {
-    id: 'spiritbox',
+    id: 'spiritBox',
     name: '通靈盒',
     desc: '通靈盒是用來與鬼魂交流的電子設備。它會不斷的發出白噪聲，若鬼魂回應了問題，即為通靈盒證據。',
     tag: 'ev',
@@ -713,17 +713,17 @@ export const items = [
         {
           title: '一級',
           text: '檢測範圍 3 米。麥克風指示亮紅光，表示正在聆聽玩家語音，鬼魂指示閃爍紅光表示成功判定語句但沒回應，閃爍白光表示有回應。',
-          imgPath: 'spiritbox_T1.webp'
+          imgPath: 'spiritBox_T1.webp'
         },
         {
           title: '二級',
           text: '檢測範圍 4 米。螢幕左上角麥克風圖標閃爍，表示正在聆聽玩家語音，閃爍 X 表示鬼聽到問題但沒回應，閃爍鬼魂圖標表示有回應。',
-          imgPath: 'spiritbox_T2.webp'
+          imgPath: 'spiritBox_T2.webp'
         },
         {
           title: '三級',
           text: '檢測範圍 5 米。MIC INPUT 指示燈發亮，表示正在聆聽玩家語音，RESPONSE 指示燈閃爍紅光表示鬼聽到問題但沒回應，閃爍白光表示有回應。',
-          imgPath: 'spiritbox_T3.webp'
+          imgPath: 'spiritBox_T3.webp'
         },
         {
           title: '使用技巧',

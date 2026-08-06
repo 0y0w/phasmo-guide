@@ -18,20 +18,15 @@ body { background: var(--background); color: var(--text-primary); padding: 20px;
 #root { width: 100%; display: flex; justify-content: center; }
 .container { width: 100%; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
 
-/* General */
-.link { color: var(--primary); text-decoration: underline; }
-.desc-block { background: var(--card-bg); border-radius: var(--radius-lg); padding: 18px; border: 1px solid var(--intensity-8); margin-bottom: 24px; }
-.desc-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; }
-
 /* Header & Navigation */
 .header { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--intensity-12); }
 .logo { font-size: 24px; font-weight: 700; color: var(--primary); letter-spacing: 1px; text-decoration: none; }
 .logo-tag {color: var(--intensity-12); }
 .nav { display: flex; gap: 16px; align-items: center; }
-.nav-item { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: .2s; padding: 6px 12px; border-radius: var(--radius-md); }
+.nav-item { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: .2s; padding: 6px 12px; border-radius: var(--radius-md); user-select: none; }
 .nav-item:hover, .nav-item.active { color: var(--primary); background: var(--intensity-8); }
 .dropdown { position: relative; display: flex; }
-.dropdown-content { display: none; position: absolute; left: 0; top: 100%; background-color: var(--card-bg); min-width: 120px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); border-radius: var(--radius-md); border: 1px solid var(--intensity-12); z-index: 10; }
+.dropdown-content { display: none; position: absolute; left: 0; top: 100%; background-color: var(--card-bg); min-width: 120px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); border-radius: var(--radius-md); border: 1px solid var(--intensity-12); z-index: 10; user-select: none; }
 .dropdown-content a { color: var(--text-secondary); padding: 8px 16px; text-decoration: none; display: block; font-size: 13px; border-radius: var(--radius-md); transition: .2s; }
 .dropdown-content a:hover { color: var(--primary); background-color: var(--intensity-8); }
 .dropdown:hover .dropdown-content { display: block; }
@@ -43,6 +38,12 @@ body { background: var(--background); color: var(--text-primary); padding: 20px;
 .section-title { font-size: 24px; font-weight: 600; color: var(--text-primary); display: flex; gap: 8px; }
 .section-title dt { margin-left: auto; color: var(--text-tertiary); }
 .section-tag { font-size: 14px; background: var(--intensity-12); padding: 6px 10px; border-radius: 6px; color: var(--text-secondary); align-self: center; }
+
+/* General */
+.link { color: var(--primary); text-decoration: underline; }
+.desc-area { background: var(--card-bg); border-radius: var(--radius-lg); padding: 20px; display: grid; border: 1px solid var(--intensity-8); margin-bottom: 24px; }
+.desc-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: var(--accent)}
+.desc-content { font-size: 16px; font-weight: 350; color: var(--text-primary); white-space: pre-line; }
 
 /* Tool Section: Evidence Filter */
 .tool-panel { background: var(--card-bg); border-radius: var(--radius-lg); padding: 20px; border: 1px solid var(--intensity-8); margin-bottom: 24px; }
@@ -122,7 +123,7 @@ body { background: var(--background); color: var(--text-primary); padding: 20px;
 .item-detail-area { background: var(--card-bg); border-radius: var(--radius-lg); padding: 20px; display: grid; gap:20px; border: 1px solid var(--intensity-8); margin-bottom: 24px; }
 .item-detail-content-block { display: flex; align-items: flex-start; }
 .item-detail-text-area { flex: 1; }
-.item-detail-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: var(--text-primary); }
+.item-detail-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: var(--accent); }
 .item-detail-text { font-size: 16px; font-weight: 350; color: var(--text-primary); white-space: pre-line; }
 .item-detail-img-grid  { width: 120px; height: 120px; flex-shrink: 0; margin-left: auto; border-radius: var(--radius-md); overflow: hidden; }
 .item-detail-img-grid img { height: 100%; width: 100%; object-fit: cover; display: block; justify-self: center; }

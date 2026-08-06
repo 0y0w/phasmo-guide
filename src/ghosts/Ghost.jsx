@@ -110,7 +110,7 @@ export default function Ghost() {
             <dt>Update: 2026.08.01</dt>
           </h1>
         </div>
-        <div className='desc-block'>
+        <div className='desc-area'>
           <h2 className='desc-title'>鬼魂身分證</h2>
           <div className='idty-grid'>
             <div className='idty-content'>性別：{Data.gender}</div>

@@ -23,7 +23,7 @@ export default function GhostSpeed() {
                 <th>{`快速 > 1.7 m/s`}</th>
               </tr>
               {ghostsData.map(ghost =>(
-                <tr>
+                <tr key={ghost.id}>
                   <td>{ghost.name}</td>
                   <td className='speed-slow'>{ghost.basicSpeed?.[0] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${ghost.basicSpeed[0]}.mp3`} />}{ghost.basicSpeed[0]}</td>
                   <td className='speed-normal'>{ghost.basicSpeed?.[1] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${ghost.basicSpeed[1]}.mp3`} />}{ghost.basicSpeed[1]}</td>

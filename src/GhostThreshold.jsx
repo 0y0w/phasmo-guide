@@ -22,7 +22,7 @@ export default function GhostThreshold() {
                 <th>{`早獵 > 50 %`}</th>
               </tr>
               {ghostsData.map(ghost =>(
-                <tr>
+                <tr key={ghost.id}>
                   <td>{ghost.name}</td>
                   <td className='speed-slow'>{ghost.threshold[0]}</td>
                   <td className='speed-normal'>{ghost.threshold[1]}</td>
