@@ -16,7 +16,7 @@ export default function Achievement() {
         內容待新增...
           <br />
           <Link to="https://phasmophobia.fandom.com/zh/wiki/成就" target='_blank' rel='noopener noreferrer' className='link'>
-            前往官方維基
+            前往維基
           </Link>
         </div>
       </main>

@@ -5,7 +5,6 @@ import './Ghost.css'
 
 import { ghostsData } from '../data';
 
-// 引入各鬼魂的客製化排版
 import Template from './content/Template';
 
 import Aswang from './content/Aswang';
@@ -39,9 +38,8 @@ import Wraith from './content/Wraith';
 import Yokai from './content/Yokai';
 import Yurei from './content/Yurei';
 
-// 建立對照表 (Registry)
 const ghostComponents = {
-  Template: Template,
+  template: Template,
 
   aswang: Aswang,
   banshee: Banshee,
@@ -68,18 +66,16 @@ const ghostComponents = {
   shade: Shade,
   spirit: Spirit,
   thaye: Thaye,
-  theMimic: TheMimic,
-  theTwins: TheTwins,
+  themimic: TheMimic,
+  thetwins: TheTwins,
   wraith: Wraith,
   yokai: Yokai,
   yurei: Yurei
-  // 未來有新排版的鬼，在這裡補上一行即可
 };
 
 export default function Ghost() {
   const { ghostId } = useParams();
 
-  // 1. 取得該鬼魂對應的專屬組件
   const Data = ghostsData.find((ghost) => ghost.id === ghostId); 
   const CustomContent = ghostComponents[ghostId];
 
@@ -111,15 +107,17 @@ export default function Ghost() {
           </h1>
         </div>
         <div className='desc-area'>
-          <h2 className='desc-title'>鬼魂身分證</h2>
-          <div className='idty-grid'>
-            <div className='idty-content'>性別：{Data.gender}</div>
-            <div className='idty-content'><Link to="/ghostSpeed" className='link'>基礎移度</Link>：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
-            <div className='idty-content'><Link to="/ghostThreshold" className='link'>獵殺閾值</Link>：{Data.threshold.filter(p => p!=="" && p!=="*").join(" | ")} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
-            <div className='idty-content'>視野加速：{Data.acc}</div>
-            <br />
+          <div>
+            <h2 className='desc-title'>基本資料</h2>
+            <div className='idty-grid'>
+              <div className='idty-content'>性別：{Data.gender}</div>
+              <div className='idty-content'><Link to="/ghostSpeed" className='link'>基礎移度</Link>：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
+              <div className='idty-content'><Link to="/ghostThreshold" className='link'>獵殺閾值</Link>：{Data.threshold.filter(p => p!=="" && p!=="*").join(" | ")} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
+              <div className='idty-content'>視野加速：{Data.acc}</div>
+              <br />
+            </div>
+            <div className='idty-desc'>{Data.desc}</div>
           </div>
-          <div className='idty-desc'>{Data.desc}</div>
         </div>
         {CustomContent ( <CustomContent /> )}
       </main>

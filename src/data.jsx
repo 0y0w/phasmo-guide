@@ -396,7 +396,7 @@ export const ghostsData = [
     acc: '無'
   },
   {
-    id: 'theMimic',
+    id: 'themimic',
     name: '擬魂 The Mimic',
     tag: '',
     evidence: ['box', 'fp', 'temp', 'orb', 'ns', 'eh', 'flw', 'nc', 'acc'],
@@ -408,7 +408,7 @@ export const ghostsData = [
     acc: '未知'
   },
   {
-    id: 'theTwins',
+    id: 'thetwins',
     name: '孿魂 The Twins',
     tag: '接近常速',
     evidence: ['emf', 'box', 'temp', 'ns', 'acc'],

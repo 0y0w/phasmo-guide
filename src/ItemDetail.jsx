@@ -48,7 +48,7 @@ export default function ItemDetail() {
             </div>
           ))}
         <Link to="https://phasmophobia.fandom.com/zh/wiki/裝備" target='_blank' rel='noopener noreferrer' className='link'>
-          前往官方維基
+          前往維基
         </Link>
       </main>
     </div>

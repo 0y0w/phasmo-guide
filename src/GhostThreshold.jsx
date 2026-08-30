@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
 import { ghostsData } from './data.jsx'
@@ -23,7 +24,7 @@ export default function GhostThreshold() {
               </tr>
               {ghostsData.map(ghost =>(
                 <tr key={ghost.id}>
-                  <td>{ghost.name}</td>
+                  <td><Link to={`/ghosts/${ghost.id}`} className='speed-link'>{ghost.name}</Link></td>
                   <td className='speed-slow'>{ghost.threshold[0]}</td>
                   <td className='speed-normal'>{ghost.threshold[1]}</td>
                   <td className='speed-fast'>{ghost.threshold[2]}{ghost.threshold?.[3] && ghost.threshold[3]}</td>

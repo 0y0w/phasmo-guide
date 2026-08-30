@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import { ghostsData } from './data.jsx'
 import SoundPlayer from './audioPlayer.jsx';
+import { Link } from 'react-router-dom';
 
 export default function GhostSpeed() {
   return (
@@ -24,7 +25,7 @@ export default function GhostSpeed() {
               </tr>
               {ghostsData.map(ghost =>(
                 <tr key={ghost.id}>
-                  <td>{ghost.name}</td>
+                  <td><Link to={`/ghosts/${ghost.id}`} className='speed-link' >{ghost.name}</ Link></td>
                   <td className='speed-slow'>{ghost.basicSpeed?.[0] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${ghost.basicSpeed[0]}.mp3`} />}{ghost.basicSpeed[0]}</td>
                   <td className='speed-normal'>{ghost.basicSpeed?.[1] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${ghost.basicSpeed[1]}.mp3`} />}{ghost.basicSpeed[1]}</td>
                   <td className='speed-fast'>{ghost.basicSpeed?.[2] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${ghost.basicSpeed[2]}.mp3`} />}{ghost.basicSpeed[2]}</td>
