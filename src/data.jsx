@@ -222,7 +222,7 @@ export const ghostsData = [
     evidence: ['orb', 'box', 'fp', 'ns', 'nc', 'acc'],
     evidenceNames: ['紫外線', '靈球', '通靈盒'],
     desc: '盲靈看不到玩家，但能聽到玩家行走、奔跑。',
-    threshold: ['', '50', ''],
+    threshold: ['', '50', '70'],
     basicSpeed: ['', '1.7', '2.21'],
     gender: '未知',
     acc: '有'
@@ -366,7 +366,7 @@ export const ghostsData = [
     evidence: ['emf', 'write', 'temp', 'ns', 'nc', 'acc'],
     evidenceNames: ['EMF 5級', '刺骨寒溫', '鬼魂筆跡'],
     desc: '當玩家與暗影在同個房間時，暗影無法進行互動、事件、獵殺。暗影現身時傾向於黑影型態。',
-    threshold: ['', '50', ''],
+    threshold: ['35', '', ''],
     basicSpeed: ['', '1.7', ''],
     gender: '未知',
     acc: '有'

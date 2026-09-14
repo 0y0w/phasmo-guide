@@ -7,7 +7,7 @@ export default function kormos() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>
-          <div>盲靈可以聽到玩家的腳步聲，但無法聽到使用物品、丟棄物品的聲音。</div>
+          <div>盲靈可以聽到玩家的腳步聲，但無法聽到使用物品、丟棄物品的聲音，隔層樓無法聽到。</div>
           <table className='desc-table' style={{'--cols': 4}}>
             <tbody>
               <tr><th>行為</th><td>跑步</td><td>站著走路</td><td>蹲著走路</td></tr>
@@ -21,11 +21,13 @@ export default function kormos() {
           <br />
           <div>盲靈追擊 5 米範圍內的目標時才會開始累計視野加速。</div>
           <br />
+          <div>玩家與鬼魂在同一房間內奔跑時，獵殺閾值提高至 70%。</div>
+          <br />
           <div>※ <hl>儘管盲靈沒有發現玩家，獵殺時穿過玩家仍然會死亡。</hl></div>
         </div>
       </div>
       <div>
-        <div className='desc-title'>能力</div>
+        <div className='desc-title'>活動</div>
         <div className='desc-content'>
           <div>盲靈不會觸發追擊類的鬼魂事件（哈氣）。</div>
         </div>
