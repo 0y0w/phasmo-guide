@@ -24,6 +24,7 @@ export default function obake() {
         <div className='desc-title'>分辨</div>
         <div className='desc-content'>
           <div>在應該留下指紋的互動中沒有留下指紋。</div>
+          <div>指紋過早消失。</div>
           <div>特殊指紋，如六指。</div>
           <div>獵殺時切換模型。</div>
         </div>
