@@ -15,6 +15,8 @@ import Ghost from './ghosts/Ghost.jsx'
 import MapDetail from './MapDetail.jsx'
 import ItemDetail from './ItemDetail.jsx'
 
+import WWM from './wwm/WWM.jsx'
+
 import './App.css'
 
 
@@ -35,6 +37,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/ghosts/:ghostId" element={<Ghost />} />
         <Route path="/maps/:mapId" element={<MapDetail />} />
         <Route path='/items/:itemId' element={<ItemDetail />} />
+
+        <Route path='/wwm' element={<WWM />} />
 
         <Route path="*" element={<App />} />
       </Routes>

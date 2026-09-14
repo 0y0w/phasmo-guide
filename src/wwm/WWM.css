@@ -1,0 +1,5 @@
+.wwm-block { width: 100%; max-width: 900px; padding:18px; }
+.wwm-title { font-size: 24px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;}
+.wwm-text { font-size: 18px; font-weight: 350; color: var(--text-primary); }
+
+.wwm-link { color: #dcb071; text-decoration: underline; cursor: pointer; }

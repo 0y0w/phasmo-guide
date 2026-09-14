@@ -4,7 +4,7 @@ import '../Ghost.css'
 export default function aswang() {
 
   return (
-    <div className='desc-area'>
+    <div className='desc-block'>
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>阿斯旺的初始速度為 1.53。</div>

@@ -4,12 +4,15 @@ import SoundPlayer from '../../audioPlayer';
 
 export default function deogen() {
   return (
-    <div className='desc-area'>
+    <div className='desc-block'>
       <div>
         <div className='desc-title'>獵殺</div>
-        <div className='desc-content'>霧影的移動速度取決於它與玩家的尋路距離，距離越長，霧影的速度就越快。在 2.5 米內，移動速度為 0.4，在 6 米以外，移動速度為 3.0。</div>
-        <div className='desc-content'>霧影獵殺期間始終能知道玩家位置，無論躲在哪裡。</div>
+        <div className='desc-content'>霧影的移動速度取決於它與玩家的尋路距離，距離越長，霧影的速度就越快。</div>
+        <div className='desc-content'>在 2.5 米內，移動速度為 0.4，在 6 米以外，移動速度為 3.0。</div>
+        <br />
         <div className='desc-content'>獵殺過程中，霧影的閃爍頻率比一般鬼高。</div>
+        <br />
+        <div className='desc-content'>霧影獵殺期間 <hl>始終知道</hl> 玩家位置，無論躲在哪裡。</div>
       </div>
       <div>
         <div className='desc-title'>能力</div>

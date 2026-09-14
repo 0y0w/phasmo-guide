@@ -107,19 +107,21 @@ export default function Ghost() {
           </h1>
         </div>
         <div className='desc-area'>
-          <div>
-            <h2 className='desc-title'>基本資料</h2>
-            <div className='idty-grid'>
-              <div className='idty-content'>性別：{Data.gender}</div>
-              <div className='idty-content'><Link to="/ghostSpeed" className='link'>基礎移度</Link>：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
-              <div className='idty-content'><Link to="/ghostThreshold" className='link'>獵殺閾值</Link>：{Data.threshold.filter(p => p!=="" && p!=="*").join(" | ")} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
-              <div className='idty-content'>視野加速：{Data.acc}</div>
-              <br />
+          <div className='desc-block'>
+            <div>
+              <h2 className='desc-title'>基本資料</h2>
+              <div className='idty-grid'>
+                <div className='idty-content'>性別：{Data.gender}</div>
+                <div className='idty-content'><Link to="/ghostSpeed" className='link'>基礎移度</Link>：{Data.basicSpeed.filter(s => s!=="").join(" | ")} m/s</div>
+                <div className='idty-content'><Link to="/ghostThreshold" className='link'>獵殺閾值</Link>：{Data.threshold.filter(p => p!=="" && p!=="*").join(" | ")} %{Data.evidence.includes("eh") && <span className='idty-content-tag'>早獵</span>}</div>
+                <div className='idty-content'>視野加速：{Data.acc}</div>
+                <br />
+              </div>
+              <div className='idty-desc'>{Data.desc}</div>
             </div>
-            <div className='idty-desc'>{Data.desc}</div>
           </div>
+          {CustomContent ( <CustomContent /> )}
         </div>
-        {CustomContent ( <CustomContent /> )}
       </main>
     </div>
   );
