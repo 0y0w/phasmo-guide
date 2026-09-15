@@ -17,7 +17,7 @@ export default function obake() {
           <br />
           <div>留下的指紋有 1/6 機率多一根手指。</div>
           <br />
-          <div>偶爾使用能力使地圖上所有指紋存在時間減半，可連續使用能力。</div>
+          <div>偶爾使用能力使地圖上所有指紋存在時間減半，可能在短時間內多次使用能力。</div>
         </div>
       </div>
       <div>
