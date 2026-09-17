@@ -28,7 +28,7 @@ export default function onryo() {
         <div className='desc-title'>分辨</div>
         <div className='desc-content'>
           <div>在鬼房放滿火光，鬼魂一直吹滅火光而不獵殺。（需注意鬼魂可能遊蕩到鬼房外獵殺，可以在房門外也放置一火光）</div>
-          <div>鬼魂在吹滅火光後 6 秒內獵殺。（所有鬼魂都有低機率出現此現象）</div>
+          <div>鬼魂在吹滅火光後 6 秒內發起獵殺。（所有鬼魂都有低機率出現此現象）</div>
           <div>在火源旁開起獵殺可排除怨靈。</div>
         </div>
       </div>

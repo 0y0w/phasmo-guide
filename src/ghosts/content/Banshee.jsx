@@ -10,7 +10,9 @@ export default function banshee() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>遊戲開始時，女妖會隨機選定一名玩家作為獵殺目標。若目標玩家死亡或離開遊戲，則隨機選擇下一位存活者。</div>
+        <br />
         <div className='desc-content'>女妖僅檢測目標玩家的理智，而非平均理智。獵殺時，女妖只會追蹤目標玩家，即使穿過非目標玩家也不會照程擊殺。</div>
+        <br />
         <div className='desc-content'>若目標處於調查區外，女妖仍以其理智值決定是否獵殺。但會追擊任何可觸及的玩家。</div>
       </div>
       <div>
