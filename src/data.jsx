@@ -150,7 +150,7 @@ export const ghostsData = [
     evidence: ['fp', 'write', 'temp', 'eh', 'ns', 'nc', 'acc'],
     evidenceNames: ['紫外線', '鬼魂筆跡', '刺骨寒溫'],
     desc: '惡魔能無視理智開啟獵殺，且獵殺更加頻繁。',
-    threshold: ['', '70', '', '*'],
+    threshold: ['', '', '70', '*'],
     basicSpeed: ['', '1.7', ''],
     gender: '未知',
     acc: '有'
@@ -223,7 +223,7 @@ export const ghostsData = [
     evidenceNames: ['紫外線', '靈球', '通靈盒'],
     desc: '盲靈看不到玩家，但能聽到玩家行走、奔跑。',
     threshold: ['', '50', '70'],
-    basicSpeed: ['', '1.7', '2.21'],
+    basicSpeed: ['', '1.7', ''],
     gender: '未知',
     acc: '有'
   },

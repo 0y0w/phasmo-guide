@@ -17,7 +17,7 @@ export default function raiju() {
             <tbody>
               <tr><th></th><th>正常</th><th>電器</th></tr>
               <tr><th>獵殺閾值</th><td>50%</td><td>65%</td></tr>
-              <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.7.mp3`} />1.7</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/2.5.mp3`} />2.5（固定）</td></tr>
+              <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.7.mp3`} />1.7</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/2.5.mp3`} />2.5（固定）</td></tr>
             </tbody>
           </table>
         </div>

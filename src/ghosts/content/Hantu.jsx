@@ -15,7 +15,7 @@ export default function hantu() {
         <table className='desc-table' style={{'--cols': 8}}>
           <tbody>
             <tr><th>{'溫度 °C'}</th><td>{'> 15'}</td><td>{'12~15'}</td><td>{'9~12'}</td><td>{'6~9'}</td><td>{'3~6'}</td><td>{'0~3'}</td><td>{'< 0'}</td></tr>
-            <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.4.mp3`} />1.4</td><td>1.75</td><td>2.1</td><td>2.3</td><td>2.4</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/2.5.mp3`} />2.5</td><td>2.7</td></tr>
+            <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.4.mp3`} />1.4</td><td>1.75</td><td>2.1</td><td>2.3</td><td>2.4</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/2.5.mp3`} />2.5</td><td>2.7</td></tr>
           </tbody>
         </table>
       </div>

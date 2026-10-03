@@ -16,7 +16,7 @@ export default function gallu() {
             <tr><th></th><th>虛弱</th><th>普通</th><th>暴怒</th></tr>
             <tr><th>獵殺閾值</th><td>40%</td><td>50%</td><td>60%</td></tr>
             <tr><th>十字架範圍</th><td>-2 m</td><td>-</td><td>+1 m</td></tr>
-            <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.36.mp3`} />1.36</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.7.mp3`} />1.7</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.955.mp3`} />1.955</td></tr>
+            <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.36.mp3`} />1.36</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.7.mp3`} />1.7</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.955.mp3`} />1.955</td></tr>
             <tr><th>薰香致盲時長</th><td>6 s</td><td>5 s</td><td>4 s</td></tr>
           </tbody>
         </table>

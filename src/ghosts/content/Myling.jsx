@@ -7,7 +7,7 @@ export default function myling() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>
-          <div>獵殺時，鬼嬰的腳步聲只會在 12 米內被玩家聽見，而不是一般的 20 米內。這稍微大於電子干擾的距離。</div>
+          <div>獵殺時，鬼嬰的腳步聲只會在 12 米內被玩家聽見，而不是一般的 20 米內。（稍大於電子干擾 10 米）</div>
         </div>
       </div>
       <div>

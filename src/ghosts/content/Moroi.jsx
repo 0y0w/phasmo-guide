@@ -14,7 +14,7 @@ export default function moroi() {
           <table className='desc-table' style={{'--cols': 11}}>
             <tbody>
               <tr><th>平均理智</th><td>≥ 45%</td><td>40~45%</td><td>35~40%</td><td>30~35%</td><td>25~30%</td><td>20~25%</td><td>15~20%</td><td>10~15%</td><td>5~10%</td><td>0~5%</td></tr>
-              <tr><th>基礎移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.5.mp3`} />1.5</td><td>1.583</td><td>1.66</td><td>1.749</td><td>1.832</td><td>1.915</td><td>1.998</td><td>2.081</td><td>2.164</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/2.25.mp3`} />2.25</td></tr>
+              <tr><th>基礎移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.5.mp3`} />1.5</td><td>1.583</td><td>1.66</td><td>1.749</td><td>1.832</td><td>1.915</td><td>1.998</td><td>2.081</td><td>2.164</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/2.25.mp3`} />2.25</td></tr>
             </tbody>
           </table>
           <br />

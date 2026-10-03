@@ -13,7 +13,7 @@ export default function obambo() {
             <tbody>
               <tr><th></th><th>平靜</th><th>狂暴</th></tr>
               <tr><th>獵殺閾值</th><td>10%</td><td>65%</td></tr>
-              <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.445.mp3`} />1.445</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.955.mp3`} />1.955</td></tr>
+              <tr><th>獵殺移速</th><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.445.mp3`} />1.445</td><td><SoundPlayer src={`${import.meta.env.BASE_URL}audio/1.0/1.955.mp3`} />1.955</td></tr>
               <tr><th>獵殺時長</th><td>-</td><td>-20%</td></tr>
             </tbody>
           </table>
