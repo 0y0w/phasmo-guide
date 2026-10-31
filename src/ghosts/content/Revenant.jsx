@@ -1,19 +1,21 @@
-import { Link } from 'react-router-dom';
-
 import '../../App.css'
 import '../Ghost.css'
-import { ghostsData } from '../../data';
 
 export default function revenant() {
-  const Data = ghostsData.find((ghost) => ghost.id === 'revenant');
-
   return (
-    <div>
-      內容待新增...
-      <br />
-      <Link to={`https://phasmophobia.fandom.com/zh/wiki/${Data.name.split(" ")[0]}`} target='_blank' rel='noopener noreferrer' className='link'>
-            前往維基
-      </Link>
+    <div className='desc-block'>
+      <div>
+        <div className='desc-title'>獵殺</div>
+        <div className='desc-content'>
+          <div>亡魂在未發現玩家時，速度僅為 1.0，一旦發現玩家便會加速至 3.0。</div>
+        </div>
+      </div>
+      <div>
+        <div className='desc-title'>分辨</div>
+        <div className='desc-content'>
+          <div>鬼魂沒檢測到玩家時很慢，一旦發現玩家立即變得非常快。</div>
+        </div>
+      </div>
     </div>
   );
 }

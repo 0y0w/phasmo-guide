@@ -7,7 +7,11 @@ export default function aswang() {
     <div className='desc-block'>
       <div>
         <div className='desc-title'>獵殺</div>
-        <div className='desc-content'>阿斯旺的初始速度為 1.53。</div>
+        <div className='desc-content'>
+          <div>阿斯旺的初始速度為 1.53。</div>
+          <br />
+          <div>阿斯旺的視野加速度較快，能在更短的時間內加速到極快。</div>
+        </div>
       </div>
       <div>
         <div className='desc-title'>能力</div>
@@ -15,7 +19,10 @@ export default function aswang() {
       </div>
       <div>
         <div className='desc-title'>分辨</div>
-        <div className='desc-content'>沒有明顯的特徵，只能通過腳步（速度）判斷，但阿斯旺的速度 1.53 與常速 1.7 接近。</div>
+        <div className='desc-content'>
+          <div>獵殺初始移速較慢，但阿斯旺的速度 1.53 與常速 1.7 接近。</div>
+          <div>視野加速較快。</div>
+        </div>
       </div>
     </div>
   );
