@@ -45,7 +45,6 @@ export default function App() {
                     <div className="idty-content"><Link to="/ghostSpeed" className="link">基礎移度</Link>：{ghost.basicSpeed.filter(s => s !== "").join(" | ")} m/s</div>
                     <div className="idty-content"><Link to="/ghostThreshold" className="link">獵殺閾值</Link>：{ghost.threshold.filter(p => p !== "" && p !== "*").join(" | ")} %{ghost.evidence.includes("eh") && <span className="idty-content-tag">早獵</span>}</div>
                     <div className="idty-content">視野加速：{ghost.acc}</div>
-                    <br />
                   </div>
                 </div>
               </div>

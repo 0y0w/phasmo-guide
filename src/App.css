@@ -22,9 +22,6 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* 整體文字加大：基準字號 16px → 18px（rem/em 依比例放大） */
-html { font-size: 112.5%; }
-
 body {
     background: var(--background);
     color: var(--text-primary);
