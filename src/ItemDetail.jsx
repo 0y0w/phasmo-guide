@@ -31,7 +31,7 @@ export default function ItemDetail() {
       <Header activePage='Items'/>
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">{ itemData.name }<dt>Update: 2026.08.05</dt></h1>
+          <h1 className="section-title">{ itemData.name }</h1>
         </div>
           {itemData.content && itemData.content.map((content, index) =>(
             <div key={`area${index}`} className='item-detail-area'>
@@ -40,7 +40,7 @@ export default function ItemDetail() {
                   <div className='item-detail-text-area'>
                     <div className='item-detail-title'>{c.title}</div>
                     <div className='item-detail-text'>{c.text}</div>
-                    {c.audio && <div className='item-detail-audio'><SoundPlayer key={c.audio.text} src={`${import.meta.env.BASE_URL}audio/${c.audio.path}.mp3`} />{c.audio.text}</div>}
+                    {c.audio && <span className='item-detail-audio'><SoundPlayer key={c.audio.text} src={`${import.meta.env.BASE_URL}audio/${c.audio.path}.mp3`} />{c.audio.text}</span>}
                   </div>
                   {c.imgPath && <div className={c.imgClass ? c.imgClass : 'item-detail-img-grid'}><img src={`${import.meta.env.BASE_URL}item/${c.imgPath}`} alt={c.imgPath} /></div>}
                 </div>

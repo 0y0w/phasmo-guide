@@ -1,59 +1,23 @@
-import { useState, useEffect } from 'react';
-import './App.css';
+import { useEffect } from 'react';
 import Header from './Header';
-import { GhostCard } from './Card';
-import { evidences, ghostsData } from './data';
+import { Link } from 'react-router-dom';
+import { ghostsData } from './data';
+import { EvTag } from './Card';
+import { ghostContentMap } from './ghosts/content';
+import './ghosts/Inline.css';
 
 export default function App() {
-  // 記錄目前被選中的證據 ID（例如: ['emf', 'box']）
-  const [activeEvidence, setActiveEvidence] = useState(() => {
-    const saved = localStorage.getItem('ph_active_evidence');
-    return saved ? JSON.parse(saved) : [];
-  });
-  const [rejectedEvidence, setRejectedEvidence] = useState(() => {
-    const saved = localStorage.getItem('ph_rejected_evidence');
-    return saved ? JSON.parse(saved) : [];
-  });
-
+  // hash 跳轉處理：頁面渲染完成後滾動到對應鬼魂區塊（如 /#aswang）
   useEffect(() => {
-    localStorage.setItem('ph_active_evidence', JSON.stringify(activeEvidence));
-  }, [activeEvidence]);
-
-  useEffect(() => {
-    localStorage.setItem('ph_rejected_evidence', JSON.stringify(rejectedEvidence));
-  }, [rejectedEvidence]);
-
-  // 點擊證據按鈕的處理函數
-  const toggleEvidence = (id) => {
-    if (activeEvidence.includes(id)) {
-      // 若目前為「包含」，切換為「排除」
-      setActiveEvidence(activeEvidence.filter(evId => evId !== id));
-      setRejectedEvidence([...rejectedEvidence, id]);
-    } else if (rejectedEvidence.includes(id)) {
-      // 若目前為「排除」，切換回「未選」
-      setRejectedEvidence(rejectedEvidence.filter(evId => evId !== id));
-    } else {
-      // 若目前為「未選」，切換為「包含」
-      setActiveEvidence([...activeEvidence, id]);
-    }
-  };
-  const handleRightClick = (e, id) => {
-    e.preventDefault(); // 阻止瀏覽器預設的右鍵選單
-    
-    setRejectedEvidence(rejectedEvidence.filter(evId => evId !== id));
-    setActiveEvidence(activeEvidence.filter(evId => evId !== id));
-  };
-
-  // 根據選中的證據，過濾鬼魂名單
-  const filteredGhosts = ghostsData.filter(ghost => {
-    // 條件 1：必須擁有「所有」被 active 的證據
-    const hasAllActive = activeEvidence.every(ev => ghost.evidence.includes(ev));
-    
-    // 條件 2：不能擁有「任何」被 rejected 的證據
-    const hasNoRejected = rejectedEvidence.every(ev => !ghost.evidence.includes(ev));
-    
-    return hasAllActive && hasNoRejected;
-  });
+    const hash = window.location.hash;
+    if (!hash) return;
+    // 稍等渲染完成再滾動
+    const timer = setTimeout(() => {
+      const el = document.getElementById(hash.slice(1));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="container">
@@ -61,44 +25,34 @@ export default function App() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">鬼魂<dt>Update: 2026.07.31</dt></h1>
+          <h1 className="section-title">鬼魂</h1>
         </div>
 
-        {/* 證據篩選工具面板 */}
-        <section className="tool-panel">
-          <div className="panel-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>證據篩選</div>
-          <div className="evidence-grid">
-            {evidences.map((ev) => {
-              // 判斷當前按鈕狀態，給予對應的 class
-              let btnClass = 'ev-btn';
-              if (activeEvidence.includes(ev.id)) btnClass += ' active';
-              if (rejectedEvidence.includes(ev.id)) btnClass += ' rejected';
-
-              return (
-                <div 
-                  key={ev.id}
-                  className={btnClass}
-                  onClick={() => toggleEvidence(ev.id)}
-                  onContextMenu={(e) => handleRightClick(e, ev.id)} // 綁定右鍵事件
-                >
-                  {ev.icon}
-                  {ev.name}
+        {/* 所有鬼魂依序直接展開，內容(jsx)原封不動內嵌，點擊仍可跳詳細頁 */}
+        {ghostsData.map(ghost => {
+          const CustomContent = ghostContentMap[ghost.id];
+          return (
+            <section key={ghost.id} className="ghost-inline" id={ghost.id}>
+              <h2 className="ghost-inline-title">
+                {ghost.name}
+                {ghost.evidenceNames.map((ev, i) => (<EvTag key={i} name={ev} />))}
+              </h2>
+              <div className="desc-block">
+                <div>
+                  <h2 className="desc-title">基本資料</h2>
+                  <div className="idty-grid">
+                    <div className="idty-content">性別：{ghost.gender}</div>
+                    <div className="idty-content"><Link to="/ghostSpeed" className="link">基礎移度</Link>：{ghost.basicSpeed.filter(s => s !== "").join(" | ")} m/s</div>
+                    <div className="idty-content"><Link to="/ghostThreshold" className="link">獵殺閾值</Link>：{ghost.threshold.filter(p => p !== "" && p !== "*").join(" | ")} %{ghost.evidence.includes("eh") && <span className="idty-content-tag">早獵</span>}</div>
+                    <div className="idty-content">視野加速：{ghost.acc}</div>
+                    <br />
+                  </div>
                 </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* 鬼魂結果顯示區 */}
-        <div className="results-area">
-          {filteredGhosts.length > 0 ? (
-            filteredGhosts.map(ghost => (
-              <GhostCard key={ghost.id} ghost={ghost} />
-            ))
-          ) : (
-            <p style={{ color: 'var(--text-tertiary)' }}>找不到符合這些證據的鬼魂...</p>
-          )}
-        </div>
+              </div>
+              {CustomContent && <CustomContent />}
+            </section>
+          );
+        })}
       </main>
     </div>
   );

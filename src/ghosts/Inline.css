@@ -1,0 +1,26 @@
+/* 鬼魂首頁：依序內嵌展示各鬼魂內容 */
+.ghost-inline {
+    margin-bottom: 44px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+}
+.ghost-inline:last-child { border-bottom: none; padding-bottom: 0; }
+
+.ghost-inline-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    letter-spacing: -.3px;
+}
+
+.ghost-inline-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    white-space: pre-line;
+}

@@ -16,19 +16,9 @@ export default function Tutorial() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">新手教學<dt>Update: 2026.08.06</dt></h1>
+          <h1 className="section-title">新手教學</h1>
         </div>
         <div className='desc-area'>
-          <div className='desc-block'>
-            <div className='desc-title'>目錄</div>
-            <div className='link'>
-              <div className='catalog'>
-                <span onClick={()=>scrollTo('findRoom')}>尋找鬼房</span>
-                <span onClick={()=>scrollTo('confirmGhost')}>證據定鬼</span>
-                <span onClick={()=>scrollTo('temp')}>溫度</span>
-              </div>
-            </div>
-          </div>
           <div className='desc-block' id='findRoom'>
             <div className='desc-title'>尋找鬼房</div>
             <div className='desc-content'>
@@ -69,7 +59,7 @@ export default function Tutorial() {
           <div className='desc-block' id='temp'>
             <div className='desc-title'>溫度</div>
             <div className='desc-content'>
-              <div>地圖的溫度受天氣影響，每種天氣類型有固定的環境溫度。解鎖調查區大門前，若電閘初始設定為開啟（業餘或自訂）室內溫度為 20°C，其他難度皆為環境溫度。</div>
+              <div>地圖的溫度受天氣影響，每種天氣類型有固定的環境溫度。解鎖調查區大門前，若電閘初始設定為開啟（業餘或自訂）室內溫度為 20°C，其餘皆為環境溫度。</div>
               <table className='desc-table' style={{'--cols': 5}}>
                 <tbody>
                   <tr><th>天氣</th><td>日出</td><td>晴天、大霧、血月</td><td>小雨、暴雨、刮風</td><td>下雪</td></tr>

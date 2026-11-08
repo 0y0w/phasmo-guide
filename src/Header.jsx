@@ -20,7 +20,7 @@ export default function Header({ activePage = 'ghosts' }) {
         <div className="dropdown">
           <Link to="" className="nav-item">其他</Link>
           <div className="dropdown-content">
-            <Link to="/achievement">成就</Link>
+            <Link to="/evfilter" className={`nav-item ${activePage === 'Tools' ? 'active' : ''}`}>證據篩選器</Link>
           </div>
         </div>
       </nav>

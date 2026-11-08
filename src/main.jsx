@@ -2,7 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import App from './App.jsx'    
+import App from './App.jsx'
+import EvFilter from './EvFilter.jsx'
 import Items from './Items.jsx'
 import Maps from './Maps.jsx'
 import Challenges from './Challenges.jsx'
@@ -15,16 +16,18 @@ import Ghost from './ghosts/Ghost.jsx'
 import MapDetail from './MapDetail.jsx'
 import ItemDetail from './ItemDetail.jsx'
 
-import WWM from './wwm/WWM.jsx'
+import TOC from './TOC.jsx'
 
 import './App.css'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <TOC />
     <BrowserRouter basename='/phasmo-guide'>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/evfilter" element={<EvFilter />} />
         <Route path="/items" element={<Items />} />
         <Route path="/maps" element={<Maps />} />
         <Route path="/challenges" element={<Challenges />} />
@@ -37,8 +40,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/ghosts/:ghostId" element={<Ghost />} />
         <Route path="/maps/:mapId" element={<MapDetail />} />
         <Route path='/items/:itemId' element={<ItemDetail />} />
-
-        <Route path='/wwm' element={<WWM />} />
 
         <Route path="*" element={<App />} />
       </Routes>

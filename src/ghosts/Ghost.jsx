@@ -4,80 +4,15 @@ import '../App.css'
 import './Ghost.css'
 
 import { ghostsData } from '../data';
+import { EvTag } from '../Card';
 
-import Template from './content/Template';
-
-import Aswang from './content/Aswang';
-import Banshee from './content/Banshee';
-import Dayan from './content/Dayan';
-import Deildegast from './content/Deildegast';
-import Demon from './content/Demon';
-import Deogen from './content/Deogen';
-import Gallu from './content/Gallu';
-import Goryo from './content/Goryo';
-import Hantu from './content/Hantu';
-import Jinn from './content/Jinn';
-import Kormos from './content/Kormos';
-import Mare from './content/Mare';
-import Moroi from './content/Moroi';
-import Myling from './content/Myling';
-import Obake from './content/Obake';
-import Obambo from './content/Obambo';
-import Oni from './content/Oni';
-import Onryo from './content/Onryo';
-import Phantom from './content/Phantom';
-import Poltergeist from './content/Poltergeist';
-import Raiju from './content/Raiju';
-import Revenant from './content/Revenant';
-import Shade from './content/Shade';
-import Spirit from './content/Spirit';
-import Thaye from './content/Thaye';
-import TheMimic from './content/TheMimic';
-import TheTwins from './content/TheTwins';
-import Wraith from './content/Wraith';
-import Yokai from './content/Yokai';
-import Yurei from './content/Yurei';
-
-const ghostComponents = {
-  template: Template,
-
-  aswang: Aswang,
-  banshee: Banshee,
-  dayan: Dayan,
-  deildegast: Deildegast,
-  demon: Demon,
-  deogen: Deogen,
-  gallu: Gallu,
-  goryo: Goryo,
-  hantu: Hantu,
-  jinn: Jinn,
-  kormos: Kormos,
-  mare: Mare,
-  moroi: Moroi,
-  myling: Myling,
-  obake: Obake,
-  obambo: Obambo,
-  oni: Oni,
-  onryo: Onryo,
-  phantom: Phantom,
-  poltergeist: Poltergeist,
-  raiju: Raiju,
-  revenant: Revenant,
-  shade: Shade,
-  spirit: Spirit,
-  thaye: Thaye,
-  themimic: TheMimic,
-  thetwins: TheTwins,
-  wraith: Wraith,
-  yokai: Yokai,
-  yurei: Yurei
-};
+import { ghostContentMap } from './content';
 
 export default function Ghost() {
   const { ghostId } = useParams();
 
-  const Data = ghostsData.find((ghost) => ghost.id === ghostId); 
-  const CustomContent = ghostComponents[ghostId];
+  const Data = ghostsData.find((ghost) => ghost.id === ghostId);
+  const CustomContent = ghostContentMap[ghostId];
 
   if (!Data) {
     return (
@@ -102,8 +37,7 @@ export default function Ghost() {
         <div className="section-header">
           <h1 className="section-title">
             {Data.name}
-            {Data.evidenceNames.map((ev, index) => (<span key={index} className="section-tag">{ev}</span>))}
-            <dt>Update: 2026.08.01</dt>
+            {Data.evidenceNames.map((ev, index) => (<EvTag key={index} name={ev} />))}
           </h1>
         </div>
         <div className='desc-area'>
@@ -120,7 +54,7 @@ export default function Ghost() {
               <div className='idty-desc'>{Data.desc}</div>
             </div>
           </div>
-          {CustomContent ( <CustomContent /> )}
+          {CustomContent && <CustomContent />}
         </div>
       </main>
     </div>

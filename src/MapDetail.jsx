@@ -33,7 +33,7 @@ export default function MapDetail() {
       <Header activePage='Maps'/>
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">{ mapData.name }<dt>Update: 2026.08.01</dt></h1>
+          <h1 className="section-title">{ mapData.name }</h1>
         </div>
 
         <section className="map-area">          
