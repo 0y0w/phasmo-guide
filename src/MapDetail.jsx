@@ -39,7 +39,7 @@ export default function MapDetail() {
         <section className="map-area">          
           <div className='map-dis'>
             <TransformWrapper initialScale={1} minScale={1} maxScale={5} centerOnInit={true} wheel={{ step: 0.005 }} panning={{ velocityDisabled: true }}>
-              <TransformComponent wrapperStyle={{ width: "100%", height: "100%" }}>
+              <TransformComponent wrapperClass="map-zoom-wrapper" contentClass="map-zoom-content">
                 <img src={`${import.meta.env.BASE_URL}maps/${mapData.imgName}.png`} alt={mapData.id} />
               </TransformComponent>
             </TransformWrapper>
