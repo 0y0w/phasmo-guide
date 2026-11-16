@@ -23,7 +23,7 @@ export default function phantom() {
       <div>
         <div className='desc-title'>能力</div>
         <div className='desc-content'>
-          <div>偶爾使用能力移動到玩家附近，並留下 EMF 2級。</div>
+          <div>非獵殺期間，可以使用能力走到玩家附近，並留下 EMF 2級。</div>
         </div>
       </div>
       <div>
@@ -31,6 +31,8 @@ export default function phantom() {
         <div className='desc-content'>
           <div>現身時對鬼魂拍照或錄影，鬼魂消失但現身音效仍在播放。</div>
           <div>手冊中的鬼照清晰且看不見鬼魂，但仍被標為鬼魂照片。</div>
+          <div>移動到離鬼房很遠的玩家身旁。（幻影、魅影也可能出現此現象）</div>
+          <div>沒有任何活動卻出現 EMF 2級。（幻影也可能出現此現象）</div>
         </div>
       </div>
       <div>

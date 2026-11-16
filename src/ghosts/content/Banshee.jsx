@@ -24,7 +24,7 @@ export default function banshee() {
         <div className='desc-content'>※ <hl>跟人鬼，女妖、幻影、魅影。</hl></div>
       </div>
       <div>
-        <div className='desc-title'>鬼魂事件</div>
+        <div className='desc-title'>活動</div>
         <div className='desc-content'>女妖更容易觸發唱歌類鬼魂事件，且會減少 15% 理智而非一般鬼的 10%。女妖可以對所有玩家執行鬼魂事件。</div>
         <br />
         <div className='desc-content'>※ <hl>女妖可以對所有玩家執行鬼魂事件。</hl></div>
@@ -33,7 +33,8 @@ export default function banshee() {
         <div className='desc-title'>分辨</div>
         <div className='desc-content'>觀察獵殺時鬼魂是否可以追蹤不同人。</div>
         <div className='desc-content'>使用錄音機或收音器，聽取特殊尖嘯。</div>
-        <div className='desc-content'>某位玩家附近經常出現鬼魂活動。（幻影、魅影也可能出現此現象）</div>
+        <div className='desc-content'>某位玩家附近經常出現鬼魂活動。</div>
+        <div className='desc-content'>移動到離鬼房很遠的玩家身旁。（幻影、魅影也可能出現此現象）</div>
         <div className='desc-content'>為女性鬼魂，若出現男性名字、男性模型，且在錄音機、鬼魂事件、獵殺過程中發出男性聲音，則可以排除。</div>
       </div>
       <div>

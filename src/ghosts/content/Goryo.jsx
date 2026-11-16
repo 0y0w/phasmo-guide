@@ -5,6 +5,10 @@ export default function goryo() {
   return (
     <div className='desc-block'>
       <div>
+        <div className='desc-title'>獵殺</div>
+        <div className='desc-content'>無特色。</div>
+      </div>
+      <div>
         <div className='desc-title'>活動</div>
         <div className='desc-content'>非獵殺期間，御靈通常無法遊蕩至遠處，只會在鬼房附近。</div>
         <br />

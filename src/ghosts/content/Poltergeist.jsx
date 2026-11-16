@@ -7,7 +7,7 @@ export default function poltergeist() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>
-          <div>獵殺期間每 0.5 秒必定投擲一次物品，其他鬼魂只有 50% 成功率。</div>
+          <div>獵殺期間每 0.5 秒必定投擲一次物品（若有可投擲物品），其他鬼魂只有 50% 成功率。</div>
         </div>
       </div>
       <div>

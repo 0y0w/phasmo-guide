@@ -4,12 +4,6 @@ import './App.css';
 import Header from './Header';
 
 export default function Tutorial() {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  };
   return (
     <div className="container">
       <Header activePage='Tutorial'/>
@@ -19,7 +13,7 @@ export default function Tutorial() {
           <h1 className="section-title">新手教學</h1>
         </div>
         <div className='desc-area'>
-          <div className='desc-block' id='findRoom'>
+          <div className='desc-block'>
             <div className='desc-title'>尋找鬼房</div>
             <div className='desc-content'>
               <div>鬼魂通常會在鬼房附近遊蕩，所以在尋找證據之前，先找到鬼房能節省大量的時間。在專家級以上難度，鬼魂偶爾會更換鬼房，一般只會換到原鬼房附近的房間。</div>
@@ -29,7 +23,7 @@ export default function Tutorial() {
               <div>如果地圖較大，可以先利用收音器或EMF讀取儀，尋找鬼魂互動的位置以縮小範圍，再通過溫度計測量或是觀察玩家是否吐寒氣來確定鬼房。</div>
             </div>
           </div>
-          <div className='desc-block' id='confirmGhost'>
+          <div className='desc-block'>
             <div className='desc-title'>證據定鬼</div>
             <div className='desc-content'>
               <div>識別鬼魂的標準方法是收集證據。遊戲一共有以下 7 個證據，每種鬼魂有其中 3 個證據，在難度較低的模式中（業餘、中等、專家），只要找到這 3 個證據就能確定是哪種鬼魂。</div>
@@ -50,13 +44,13 @@ export default function Tutorial() {
               <div>靈球可以通過攝像機夜視看見。它看起來像一個緩慢移動的白點，並且可能會逐漸變暗消失，又逐漸變亮出現。靈球會始終在同一個房間裡移動，除非在鬼魂變更了鬼魂房間。在雪天觀察靈球時需要小心，雪不會向上飄，但靈球可能往任意方向移動。</div>
               <br />
               <Link to="/items/book" className='link'>鬼魂筆跡</Link>
-              <div>當鬼魂進入筆記範圍時，有機會在筆記上寫字。若鬼魂將筆記扔出，則鬼魂沒有此證據。</div>
+              <div>當鬼魂進入筆記範圍時，有機會在筆記上寫字。若鬼魂將筆記關閉並扔出，則鬼魂沒有此證據。</div>
               <br />
               <Link to="/items/spiritBox" className='link'>通靈盒</Link>
               <div>在使用通靈盒提問前，確保房間裡的燈全部關閉。如果鬼魂只回應單人，那麼只能有提問者留在房間裡。此外，鬼魂必須在通靈盒的範圍內才會回應，因此在鬼魂房間內詢問較容易得到回應。</div>
             </div>
           </div>
-          <div className='desc-block' id='temp'>
+          <div className='desc-block'>
             <div className='desc-title'>溫度</div>
             <div className='desc-content'>
               <div>地圖的溫度受天氣影響，每種天氣類型有固定的環境溫度。解鎖調查區大門前，若電閘初始設定為開啟（業餘或自訂）室內溫度為 20°C，其餘皆為環境溫度。</div>
@@ -74,6 +68,36 @@ export default function Tutorial() {
               <div>點燃小營地的營火可讓房間溫度上升到 20°C。營火本體通常會超過 500°C。大營地的營火不會觸發這樣的效果。</div>
               <br />
               <div>房間溫度低於 5°C 時，玩家會呼出寒氣。</div>
+            </div>
+          </div>
+          <div className='desc-block'>
+            <div className='desc-title'>媒體</div>
+            <div className='desc-content'>
+              <div></div>
+            </div>
+          </div>
+          <div className='desc-block'>
+            <div className='desc-title'>任務</div>
+            <div className='desc-content'>
+              <div></div>
+            </div>
+          </div>
+          <div className='desc-block'>
+            <div className='desc-title'>鬼魂活動</div>
+            <div className='desc-content'>
+              <div></div>
+            </div>
+          </div>
+          <div className='desc-block'>
+            <div className='desc-title'>獵殺應對</div>
+            <div className='desc-content'>
+              <div></div>
+            </div>
+          </div>
+          <div className='desc-block'>
+            <div className='desc-title'>靈證據難度（11.25倍）</div>
+            <div className='desc-content'>
+              <div></div>
             </div>
           </div>
         </div>
