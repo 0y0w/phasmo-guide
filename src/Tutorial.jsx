@@ -28,7 +28,7 @@ export default function Tutorial() {
             <div className='desc-content'>
               <div>識別鬼魂的標準方法是收集證據。遊戲一共有以下 7 個證據，每種鬼魂有其中 3 個證據，在難度較低的模式中（業餘、中等、專家），只要找到這 3 個證據就能確定是哪種鬼魂。</div>
               <br />
-              <Link to="/items/EMFReader" className='link'>EMF 5級</Link>
+              <h2><Link to="/items/EMFReader" className='link'>EMF 5級</Link></h2>
               <div>當鬼魂與物體互動時，此處的EMF 2 級或者 3 級讀數有 25% 的概率會變為EMF 5 級。請注意，獵殺或者鬼魂事件中的被干擾EMF儀器讀數不能作為EMF 5 級證據的判斷標準，但如果鬼魂在獵殺時移動了物品並且已經遠離了EMF讀取儀，那麼可以獲得EMF 5 級證據。</div>
               <br />
               <Link to="/items/dotsProjector" className='link'>點陣</Link>
