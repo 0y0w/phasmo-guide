@@ -170,6 +170,7 @@ body {
     border-left: 3px solid var(--accent);
 }
 .desc-title { font-size: 21px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+.desc-subtitle {font-size: 17px; font-weight: 500; color: var(--text-primary); }
 .desc-content { font-size: 17px; font-weight: 400; color: var(--text-secondary); white-space: pre-line; }
 .desc-content hl { font-weight: 600; color: var(--text-primary); background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
 

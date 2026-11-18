@@ -28,7 +28,7 @@ export default function Tutorial() {
             <div className='desc-content'>
               <div>識別鬼魂的標準方法是收集證據。遊戲一共有以下 7 個證據，每種鬼魂有其中 3 個證據，在難度較低的模式中（業餘、中等、專家），只要找到這 3 個證據就能確定是哪種鬼魂。</div>
               <br />
-              <h2><Link to="/items/EMFReader" className='link'>EMF 5級</Link></h2>
+              <div className='desc-subtitle'><Link to="/items/EMFReader" className='link'>EMF 5級</Link></div>
               <div>當鬼魂與物體互動時，此處的EMF 2 級或者 3 級讀數有 25% 的概率會變為EMF 5 級。請注意，獵殺或者鬼魂事件中的被干擾EMF儀器讀數不能作為EMF 5 級證據的判斷標準，但如果鬼魂在獵殺時移動了物品並且已經遠離了EMF讀取儀，那麼可以獲得EMF 5 級證據。</div>
               <br />
               <Link to="/items/dotsProjector" className='link'>點陣</Link>
@@ -63,7 +63,7 @@ export default function Tutorial() {
               <div>使用 2級、3級的設備錄製時，每塊媒體會額外獲得 $1、$2 獎勵。</div>
               <div>重複的媒體只能獲得 $0 ~ $5 獎勵。</div>
               <br/>
-              <div>照片</div>
+              <div className='desc-subtitle'>照片</div>
               <div>$15：鬼、影子幽靈、半透明幽靈、霧狀形態</div>
               <div>$10：點症鬼影、鬼魂筆記、刺骨寒溫、EMF 5級、幻妖指紋、燒焦的十字架</div>
               <div>$5 ：骨頭、屍體、髒水、EMF 讀數、指紋、腳印、互動、鬧鬼魔鏡、猴爪、八音盒、通靈板、招喚陣、塔羅牌、巫毒娃娃</div>
