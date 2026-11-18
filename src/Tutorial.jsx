@@ -28,25 +28,25 @@ export default function Tutorial() {
             <div className='desc-content'>
               <div>識別鬼魂的標準方法是收集證據。遊戲一共有以下 7 個證據，每種鬼魂有其中 3 個證據，在難度較低的模式中（業餘、中等、專家），只要找到這 3 個證據就能確定是哪種鬼魂。</div>
               <br />
-              <div className='desc-subtitle'><Link to="/items/EMFReader" className='link'>EMF 5級</Link></div>
+              <h2><Link to="/items/EMFReader" className='link'>EMF 5級</Link></h2>
               <div>當鬼魂與物體互動時，此處的EMF 2 級或者 3 級讀數有 25% 的概率會變為EMF 5 級。請注意，獵殺或者鬼魂事件中的被干擾EMF儀器讀數不能作為EMF 5 級證據的判斷標準，但如果鬼魂在獵殺時移動了物品並且已經遠離了EMF讀取儀，那麼可以獲得EMF 5 級證據。</div>
               <br />
-              <Link to="/items/dotsProjector" className='link'>點陣</Link>
+              <h2><Link to="/items/dotsProjector" className='link'>點陣</Link></h2>
               <div>當鬼魂進入點陣投影儀範圍時，有機會被點陣照出鬼魂的輪廓。御靈的點陣只能經由攝影機，在無人的房間中看到。</div>
               <br />
-              <Link to="/items/UVLight" className='link'>紫外線</Link>
+              <h2><Link to="/items/UVLight" className='link'>紫外線</Link></h2>
               <div>當鬼魂踩鹽或與門、燈開關或者窗戶互動時，使用紫外線燈光照射物品檢查是否有指紋來確認是否有紫外線證據。每個指紋只會持續 2 分鐘（瘋狂難度下只有 1 分鐘）然後消失。</div>
               <br />
-              <Link to="/items/thermometer" className='link'>刺骨寒溫</Link>
+              <h2><Link to="/items/thermometer" className='link'>刺骨寒溫</Link></h2>
               <div>刺骨寒溫可以通過用溫度計讀取到低於 0℃ 或者 32℉ 的溫度來確認，一般會出現在鬼房。玩家的呼出的寒氣不能用來判斷刺骨寒溫。</div>
               <br />
-              <Link to="/items/videoCamera" className='link'>靈球</Link>
+              <h2><Link to="/items/videoCamera" className='link'>靈球</Link></h2>
               <div>靈球可以通過攝像機夜視看見。它看起來像一個緩慢移動的白點，並且可能會逐漸變暗消失，又逐漸變亮出現。靈球會始終在同一個房間裡移動，除非在鬼魂變更了鬼魂房間。在雪天觀察靈球時需要小心，雪不會向上飄，但靈球可能往任意方向移動。</div>
               <br />
-              <Link to="/items/book" className='link'>鬼魂筆跡</Link>
+              <h2><Link to="/items/book" className='link'>鬼魂筆跡</Link></h2>
               <div>當鬼魂進入筆記範圍時，有機會在筆記上寫字。若鬼魂將筆記關閉並扔出，則鬼魂沒有此證據。</div>
               <br />
-              <Link to="/items/spiritBox" className='link'>通靈盒</Link>
+              <h2><Link to="/items/spiritBox" className='link'>通靈盒</Link></h2>
               <div>在使用通靈盒提問前，確保房間裡的燈全部關閉。如果鬼魂只回應單人，那麼只能有提問者留在房間裡。此外，鬼魂必須在通靈盒的範圍內才會回應，因此在鬼魂房間內詢問較容易得到回應。</div>
             </div>
           </div>
@@ -63,18 +63,18 @@ export default function Tutorial() {
               <div>使用 2級、3級的設備錄製時，每塊媒體會額外獲得 $1、$2 獎勵。</div>
               <div>重複的媒體只能獲得 $0 ~ $5 獎勵。</div>
               <br/>
-              <div className='desc-subtitle'>照片</div>
+              <h2>照片</h2>
               <div>$15：鬼、影子幽靈、半透明幽靈、霧狀形態</div>
               <div>$10：點症鬼影、鬼魂筆記、刺骨寒溫、EMF 5級、幻妖指紋、燒焦的十字架</div>
               <div>$5 ：骨頭、屍體、髒水、EMF 讀數、指紋、腳印、互動、鬧鬼魔鏡、猴爪、八音盒、通靈板、招喚陣、塔羅牌、巫毒娃娃</div>
               <br/>
-              <div>影片</div>
+              <h2>影片</h2>
               <div>$20：幽靈變形（幻妖）、正在獵殺的鬼魂</div>
               <div>$15：鬼、影子幽靈、半透明幽靈、霧狀形態</div>
               <div>$10：D.O.T.S. 幽靈、燒焦的十字架、燈泡爆炸、燈光閃爍、鬼魂筆記、靈球、踩過的鹽</div>
               <div>$5 ：陽光牧場精神病院十字架、屍體、門被移動、熄滅火焰、火焰互動、互動、開關燈、檢測到運動、物體被扔、失真音樂、搖椅、通靈板、配電箱</div>
               <br/>
-              <div>聲音</div>
+              <h2>聲音</h2>
               <div>$20：正在獵殺的鬼魂</div>
               <div>$15：鬼、影子幽靈、鬼魂事件、霧狀形態</div>
               <div>$10：女妖尖嘯、霧影呼吸、燒焦的十字架、EMF 5級、鬼魂筆記、通靈盒回應</div>
@@ -90,13 +90,13 @@ export default function Tutorial() {
               <div>捕獲鬼魂照片、捕獲鬼魂影片、團隊成員之一見證靈異事件、用十字架阻止鬼魂獵殺、用收音器檢測超自然聲音、平均理智低於 25%</div>
               <div>用 EMF 讀取儀檢測超自然活動、用運動感測器檢測鬼魂活動、用收音器檢測超自然聲音、在鬼附近的區域使用薰香、讓鬼魂吹滅火光</div>
               <br/>
-              <div>獵殺任務</div>
+              <h2>獵殺任務</h2>
               <div>在被鬼魂看到後，使用薰香再躲進躲藏點。需注意逃脫獵殺任務不能有任何玩家死亡。</div>
               <br/>
-              <div>靈異事件</div>
+              <h2>靈異事件</h2>
               <div>靈異事件僅包含現身及哈氣，不包含獵殺、互動、投擲物品。</div>
               <br/>
-              <div>超自然聲音</div>
+              <h2>超自然聲音</h2>
               <div>超自然聲音只能在使用收音器或錄音機時聽到。鬼魂最低 80 秒能發出一次超自然聲音，鬼嬰為 65 秒。</div>
             </div>
           </div>
