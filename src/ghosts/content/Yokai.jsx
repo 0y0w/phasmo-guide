@@ -7,7 +7,7 @@ export default function yokai() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>
-          <div>電器及對講機的檢測距離僅有 2.5 米，而非一般的電器 7.5 米、對講機 9 米。</div>
+          <div>電器及對講機的檢測距離僅有 2.5 米，而非一般的 9 米。</div>
           <br/>
           <div>若有玩家在妖怪附近說話，獵殺閾值提升至 80%。</div>
           <br/>

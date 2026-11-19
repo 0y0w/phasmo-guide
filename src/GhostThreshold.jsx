@@ -11,7 +11,7 @@ export default function GhostThreshold() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">獵殺閾值一覽</h1>
+          <div className="section-title">獵殺閾值一覽</div>
         </div>
         <div className='speed-area'>
           <table className='speed-table'>

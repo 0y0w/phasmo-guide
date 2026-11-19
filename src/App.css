@@ -193,7 +193,6 @@ body {
     color: var(--text-primary);
     margin: 12px 0 4px;
     border-collapse: collapse;
-    border: 2px solid var(--text-secondary);
     font-size: 15px;
     overflow: hidden;
 }
@@ -291,6 +290,50 @@ a.ev-tag:hover { background: rgba(37,99,235,.14); border-color: var(--accent); c
 .ghost-evidence .ev-tag {
     font-size: 12px;
     padding: 2px 6px;
+}
+
+/* Challenges 頁：挑戰區塊難度/裝備分兩列 */
+.challenge-block { gap: 12px; }
+.challenge-map { font-size: 15px; color: var(--text-secondary); }
+.challenge-row { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: start; }
+.challenge-row-label { font-size: 13px; font-weight: 600; color: var(--text-tertiary); padding-top: 4px; }
+.challenge-row-body { display: grid; gap: 6px; }
+/* 自然流動排列：單一容器自動換行 */
+.challenge-flow { display: flex; flex-wrap: wrap; gap: 6px; }
+.challenge-cell { display: flex; flex-wrap: wrap; gap: 6px; }
+/* Challenges: 地圖連結 tag（可跳轉） */
+.map-tag {
+    font-size: 13px; padding: 3px 8px; border-radius: 6px;
+    background: var(--code-bg); color: var(--text-secondary);
+    border: 1px solid var(--border);
+    text-decoration: none; transition: .15s; cursor: pointer;
+}
+.map-tag:hover { background: rgba(33,72,184,.14); border-color: var(--accent, #2148B8); transform: translateY(-1px); }
+
+.diff-tag {
+    font-size: 13px; padding: 3px 8px; border-radius: 6px;
+    background: var(--code-bg); color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+.equip-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; padding: 3px 8px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--panel-bg);
+}
+.equip-name { color: var(--text-secondary); }
+/* 顏色僅與道具 tier 相關：T1 黑 / T2 藍 / T3 紅 */
+.equip-tag.eq-t1 .equip-name { color: #15803D; }
+.equip-tag.eq-t2 .equip-name { color: #B45309; }
+.equip-tag.eq-t3 .equip-name { color: #DC2626; }
+.equip-meta { font-size: 11px; color: var(--text-tertiary); }
+
+/* 本週挑戰標記 */
+.challenge-current-tag {
+    margin-left: 10px;
+    font-size: 12px; font-weight: 600;
+    padding: 3px 10px; border-radius: 999px;
+    background: rgba(220,38,38,.09); color: #DC2626;
+    border: 1px solid rgba(220,38,38,.3);
 }
 
 .hidden { display: none; }

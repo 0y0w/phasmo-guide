@@ -21,9 +21,9 @@ export default function GhostSpeed() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">鬼魂移速一覽
+          <div className="section-title">鬼魂移速一覽
             <button className="speed-toggle-btn active" onClick={toggleSpeed}>切換倍速：{currentSpeed.label}</button>
-          </h1>
+          </div>
         </div>
         
         

@@ -8,6 +8,7 @@ export default function gallu() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>加魯有三種狀態，虛弱、普通、暴怒。初始為普通狀態。在 <hl>燒十字架</hl>、<hl>薰香致盲</hl>、<hl>踩鹽</hl> 後依序切換到下一狀態，直到為暴怒狀態。</div>
+        <br/>
         <div className='desc-content'>加魯在 <hl>暴怒狀態</hl> 下結束獵殺，則切換為虛弱狀態。</div>
         <br />
         <div className='desc-content'>※ <hl>部分狀態切換行為依加魯當前狀態有延遲。</hl></div>

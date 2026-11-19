@@ -10,7 +10,7 @@ export default function Achievement() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">成就</h1>
+          <div className="section-title">成就</div>
         </div>
         <div>
         內容待新增...

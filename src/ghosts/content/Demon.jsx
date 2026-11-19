@@ -7,7 +7,9 @@ export default function demon() {
       <div>
         <div className='desc-title'>獵殺</div>
         <div className='desc-content'>惡魔的獵殺冷卻為20秒，而非普通鬼魂的25秒。</div>
+        <br/>
         <div className='desc-content'>使用薰香只能在 60 秒內阻止獵殺，而非普通鬼魂的 90 秒。</div>
+        <br/>
         <div className='desc-content'>十字架的生效範圍比其他鬼大 50%。</div>
       </div>
       <div>

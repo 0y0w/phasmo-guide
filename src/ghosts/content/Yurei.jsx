@@ -31,6 +31,7 @@ export default function yurei() {
         <div className='desc-content'>
           <div>雙動門，迅速的將全開的門關閉，但並非摔門。</div>
           <div>使用運感觀察，對幽靈使用薰香後幽靈無法離開鬼房。</div>
+          <div>在鬼魂事件之外動大門。</div>
         </div>
       </div>
       <div>

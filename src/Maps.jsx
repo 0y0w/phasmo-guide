@@ -15,7 +15,7 @@ export default function Maps() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">地圖</h1>
+          <div className="section-title">地圖</div>
         </div>
         <div>
           <div className='map-area'>

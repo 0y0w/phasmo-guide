@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './TOC.css';
 
-const TITLE_SELECTOR = '.main-content h1, .main-content h2, .main-content .section-title, .main-content .ghost-inline-title, .main-content .desc-title, .main-content .map-title, .main-content .item-title, .main-content .panel-title';
+const TITLE_SELECTOR = '.main-content h1, .main-content h2 , .main-content .ghost-inline-title, .main-content .desc-title, .main-content .map-title, .main-content .item-title';
 
 export default function TOC() {
   const [items, setItems] = useState([]);
@@ -59,7 +59,7 @@ export default function TOC() {
       <div className="toc-title">本頁目錄</div>
       <ul className="toc-list">
         {items.map(item => (
-          <li key={item.id} className={`toc-item ${item.tag === 'h1' || item.tag === 'h2' ? 'toc-lv1' : 'toc-lv2'} ${activeId === item.id ? 'active' : ''}`}>
+          <li key={item.id} className={`toc-item ${item.tag === 'h1' ? 'toc-lv1' : 'toc-lv2'} ${activeId === item.id ? 'active' : ''}`}>
             <a href={`#${item.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
               {item.text}
             </a>

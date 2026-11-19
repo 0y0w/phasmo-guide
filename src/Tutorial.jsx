@@ -10,21 +10,21 @@ export default function Tutorial() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">新手教學</h1>
+          <div className="section-title">教學</div>
         </div>
         <div className='desc-area'>
           <div className='desc-block'>
-            <div className='desc-title'>尋找鬼房</div>
+            <h1 className='desc-title'>尋找鬼房</h1>
             <div className='desc-content'>
               <div>鬼魂通常會在鬼房附近遊蕩，所以在尋找證據之前，先找到鬼房能節省大量的時間。在專家級以上難度，鬼魂偶爾會更換鬼房，一般只會換到原鬼房附近的房間。</div>
               <br />
-              <div>在小圖中，直接測量<span onClick={()=>scrollTo('temp')} className='link'>溫度</span>是最快的方法。先開啟電閘，再從調查區域深處的房間往回量測溫度尋找鬼房，測得溫度兩到三次都在下降的房間大概率為鬼房。過程中若聽到鬼魂互動的聲音，也可先前往附近測量。</div>
+              <div>在小圖中，直接測量溫度是最快的方法。先開啟電閘，再從調查區域深處的房間往回量測溫度尋找鬼房，測得溫度兩到三次都在下降的房間大概率為鬼房。過程中若聽到鬼魂互動的聲音，也可先前往附近測量。</div>
               <br />
               <div>如果地圖較大，可以先利用收音器或EMF讀取儀，尋找鬼魂互動的位置以縮小範圍，再通過溫度計測量或是觀察玩家是否吐寒氣來確定鬼房。</div>
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>證據定鬼</div>
+            <h1 className='desc-title'>證據定鬼</h1>
             <div className='desc-content'>
               <div>識別鬼魂的標準方法是收集證據。遊戲一共有以下 7 個證據，每種鬼魂有其中 3 個證據，在難度較低的模式中（業餘、中等、專家），只要找到這 3 個證據就能確定是哪種鬼魂。</div>
               <br />
@@ -51,13 +51,13 @@ export default function Tutorial() {
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>完美調查</div>
+            <h1 className='desc-title'>完美調查</h1>
             <div className='desc-content'>
               <div>完美調查有 4 個條件，正確定鬼、撿起骨頭、完成所有 13 個媒體且皆為獨特、完成 3 個任務。如此能獲的額外的完美調查加成 $50。</div>
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>媒體</div>
+            <h1 className='desc-title'>媒體</h1>
             <div className='desc-content'>
               <div>一場遊戲最多可以蒐集 13 個媒體，包含 5 張照片、5 段影片、3 段聲音，根據其中內容可以獲得更多金錢。</div>
               <div>使用 2級、3級的設備錄製時，每塊媒體會額外獲得 $1、$2 獎勵。</div>
@@ -82,13 +82,13 @@ export default function Tutorial() {
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>任務</div>
+            <h1 className='desc-title'>任務</h1>
             <div className='desc-content'>
-              <div>每個任務可以獲得 $5。</div>
+              <div>每個任務可以獲得 $25 或 $30。</div>
               <br/>
               <div>在獵殺時點燃薰香驅散鬼魂、團隊成員之一成功逃脫獵殺</div>
               <div>捕獲鬼魂照片、捕獲鬼魂影片、團隊成員之一見證靈異事件、用十字架阻止鬼魂獵殺、用收音器檢測超自然聲音、平均理智低於 25%</div>
-              <div>用 EMF 讀取儀檢測超自然活動、用運動感測器檢測鬼魂活動、用收音器檢測超自然聲音、在鬼附近的區域使用薰香、讓鬼魂吹滅火光</div>
+              <div>用 EMF 讀取儀檢測超自然活動、用運動感測器檢測鬼魂活動、用收音器檢測超自然聲音、在鬼附近的區域使用薰香、讓鬼魂吹滅火光、拍到任何成功的 EMF 讀取照片、使用照相機拍攝 3 張獨特的照片、使用攝影機捕捉 3 段獨特的影片、使用錄音機捕捉 2 個獨特的超自然聲音</div>
               <br/>
               <h2>獵殺任務</h2>
               <div>在被鬼魂看到後，使用薰香再躲進躲藏點。需注意逃脫獵殺任務不能有任何玩家死亡。</div>
@@ -101,13 +101,39 @@ export default function Tutorial() {
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>獵殺應對</div>
+            <h1 className='desc-title'>獵殺</h1>
             <div className='desc-content'>
-              <div></div>
+              <div>鬼魂是否能獵殺取決於玩家的<hl>平均理智</hl>和少數特殊能力。</div>
+              <div>大多數鬼魂的獵殺理智閾值為 50%，只要平均理智為 50% 以下，鬼魂就能觸發獵殺。</div>
+              <div>部分鬼魂獵殺理智閾值高於 50%，詳細可以查看<Link to="/evfilter" className='link'>證據篩選器</Link>的<hl>早獵</hl>分類。</div>
+              <br/>
+              <h2>獵殺預防</h2>
+              <div>在鬼魂附近使用薰香能夠讓鬼魂 90 秒內無法發起獵殺（惡魔 60 秒、魂魄 180 秒）。</div>
+              <div>十字架可以阻止鬼魂在附近發起獵殺。</div>
+              <div>通過房間燈光、火光、理智藥維持理智。</div>
+              <br/>
+              <h2>獵殺判斷</h2>
+              <div>獵殺:</div>
+              <div>調查區大門上鎖，並發出上鎖音效。</div>
+              <div>燈的開關固定，玩家無法進行互動。並在獵鯊結束時全部關閉。</div>
+              <div>完整的鬼魂模型，且不斷閃爍。</div>
+              <div>持續的腳步聲。</div>
+              <br/>
+              <div>非獵殺:</div>
+              <div>鬼魂事件。鬼魂現身且原地不動或緩慢走向一名玩家，模型<hl>沒有閃爍</hl>，並將該房間的門全部<hl>關閉</hl>。</div>
+              <br/>
+              <h2>獵殺應對</h2>
+              <div>立馬關閉手上的電器及頭戴設備，並在鬼魂看到你之前躲進櫥櫃或其他遮蔽物後面的躲藏點，若已經被看到可以使用薰香中斷視野再躲進躲藏點。</div>
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>溫度</div>
+            <h1 className='desc-title'>理智</h1>
+            <div className='desc-content'>
+
+            </div>
+          </div>
+          <div className='desc-block'>
+            <h1 className='desc-title'>溫度</h1>
             <div className='desc-content'>
               <div>地圖的溫度受天氣影響，每種天氣類型有固定的環境溫度。解鎖調查區大門前，若電閘初始設定為開啟（業餘或自訂）室內溫度為 20°C，其餘皆為環境溫度。</div>
               <table className='desc-table' style={{'--cols': 5}}>
@@ -129,19 +155,19 @@ export default function Tutorial() {
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>鬼魂活動</div>
+            <h1 className='desc-title'>鬼魂活動</h1>
             <div className='desc-content'>
               <div></div>
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>鬼魂遊蕩</div>
+            <h1 className='desc-title'>鬼魂遊蕩</h1>
             <div className='desc-content'>
               <div></div>
             </div>
           </div>
           <div className='desc-block'>
-            <div className='desc-title'>零證據難度（11.25倍）</div>
+            <h1 className='desc-title'>零證據難度（11.25倍）</h1>
             <div className='desc-content'>
               <div></div>
             </div>

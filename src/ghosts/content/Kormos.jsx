@@ -39,12 +39,6 @@ export default function kormos() {
           <div>在盲靈朝你追來時速度較快，待到近處後恢復正常速度。（巨靈也可能觸發此現象）</div>
         </div>
       </div>
-      <div>
-        <div className='desc-title'>已知 BUG</div>
-        <div className='desc-content'>
-          <div>盲靈在前往路徑點時，穿過蹲下的玩家不會死亡，但如果路徑點離玩家過近，盲靈會再回頭擊殺玩家。</div>
-        </div>
-      </div>
     </div>
   );
 }

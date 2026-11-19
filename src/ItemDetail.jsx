@@ -31,14 +31,14 @@ export default function ItemDetail() {
       <Header activePage='Items'/>
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">{ itemData.name }</h1>
+          <div className="section-title">{ itemData.name }</div>
         </div>
           {itemData.content && itemData.content.map((content, index) =>(
             <div key={`area${index}`} className='item-detail-area'>
               {content.map(c =>(
                 <div key={c.title} className='item-detail-content-block'>
                   <div className='item-detail-text-area'>
-                    <div className='item-detail-title'>{c.title}</div>
+                    <h2 className='item-detail-title'>{c.title}</h2>
                     <div className='item-detail-text'>{c.text}</div>
                     {c.audio && <span className='item-detail-audio'><SoundPlayer key={c.audio.text} src={`${import.meta.env.BASE_URL}audio/${c.audio.path}.mp3`} />{c.audio.text}</span>}
                   </div>

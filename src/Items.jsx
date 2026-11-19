@@ -15,7 +15,7 @@ export default function Items() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">道具</h1>
+          <div className="section-title">道具</div>
         </div>
         <div>
           <section className='item-area'>

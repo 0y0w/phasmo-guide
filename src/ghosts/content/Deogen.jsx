@@ -7,8 +7,7 @@ export default function deogen() {
     <div className='desc-block'>
       <div>
         <div className='desc-title'>獵殺</div>
-        <div className='desc-content'>霧影的移動速度取決於它與玩家的尋路距離，距離越長，霧影的速度就越快。</div>
-        <div className='desc-content'>在 2.5 米內，移動速度為 0.4，在 6 米以外，移動速度為 3.0。</div>
+        <div className='desc-content'>霧影的移動速度取決於它與玩家的尋路距離，距離越長，霧影的速度就越快。在 2.5 米內，移動速度為 0.4，在 6 米以外，移動速度為 3.0。</div>
         <br />
         <div className='desc-content'>獵殺過程中，霧影的閃爍頻率比一般鬼高。</div>
         <br />

@@ -57,7 +57,7 @@ export default function EvFilter() {
 
       <main className="main-content">
         <div className="section-header">
-          <h1 className="section-title">證據篩選器</h1>
+          <div className="section-title">證據篩選器</div>
         </div>
 
         {/* 證據篩選工具面板 */}
