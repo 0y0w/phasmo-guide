@@ -321,6 +321,9 @@ a.ev-tag:hover { background: rgba(37,99,235,.14); border-color: var(--accent); c
     border: 1px solid var(--border); background: var(--panel-bg);
 }
 .equip-name { color: var(--text-secondary); }
+/* 挑戰未提供之裝備：灰色半透明佔位 */
+.equip-tag.eq-t-missing { opacity: .65; }
+.equip-tag.eq-t-missing .equip-name { color: var(--text-tertiary); }
 /* 顏色僅與道具 tier 相關：T1 黑 / T2 藍 / T3 紅 */
 .equip-tag.eq-t1 .equip-name { color: #15803D; }
 .equip-tag.eq-t2 .equip-name { color: #B45309; }

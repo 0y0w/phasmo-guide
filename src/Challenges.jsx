@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import './App.css';
 import Header from './Header';
 import { challenges } from './data';
@@ -6,9 +7,9 @@ import { challenges } from './data';
 // 依圖片順序排列裝備（顏色僅與道具 tier 相關：T1 黑 / T2 藍 / T3 紅）
 const EQUIP_ORDER = [
   '點陣投影儀', 'EMF讀取儀', '鬼魂筆記', '通靈盒', '溫度計',
-  '紫外線燈光', '攝像機', '手電筒', '十字架', '火光', '頭戴設備', '點火器',
-  '薰香', '運動感測器', '收音器', '相機', '鹽', '理智藥',
-  '錄音機', '聲音感測器', '三腳架',
+  '紫外線燈光', '攝像機', '手電筒', '十字架','探測杖', '火光', '頭戴設備', '點火器',
+  '薰香', '運動傳感器', '收音器', '相機', '鹽', '理智藥',
+  '錄音機', '聲音傳感器', '三腳架',
 ];
 
 const EQUIP_RANK = Object.fromEntries(EQUIP_ORDER.map((name, i) => [name, i]));
@@ -19,6 +20,14 @@ function sortEquips(equips) {
     const rb = (EQUIP_RANK[b.name] ?? 999) * 10 + b.tier;
     return ra - rb;
   });
+}
+
+// 補齊裝備：挑戰中沒有的裝備以灰色半透明佔位（無 tier），整體仍依圖片順序
+function mergeMissingEquips(equips) {
+  const present = new Set((equips || []).map(eq => eq.name));
+  const missing = EQUIP_ORDER.filter(name => !present.has(name))
+    .map(name => ({ name, tier: 0, missing: true }));
+  return sortEquips([...(equips || []), ...missing]);
 }
 
 // 本週挑戰計算：每周一 08:00 輪換，26 個挑戰循環
@@ -40,6 +49,16 @@ export default function Challenges() {
   const sorted = [...challenges.slice(currentIdx), ...challenges.slice(0, currentIdx)];
   const currentId = challenges[currentIdx].index;
 
+  useEffect(() => {
+        const hash = window.location.hash;
+        if (!hash) return;
+        // 稍等渲染完成再滾動
+        const timer = setTimeout(() => {
+          const el = document.getElementById(hash.slice(1));
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+        return () => clearTimeout(timer);
+      }, []);
   return (
     <div className="container">
       <Header activePage='Challenges'/>
@@ -51,7 +70,7 @@ export default function Challenges() {
           <div className='desc-content'>挑戰模式以專家難度為基礎調整，獎勵調整數固定為 1 倍。完成指定地圖的每週任務可獲得 $5,000 與 5,000 XP。每周一 08:00 輪換。</div>
 
           {sorted.map(ch => (
-            <div key={ch.index} className='desc-block challenge-block'>
+            <div key={ch.index} className='desc-block challenge-block' id={ch.index}>
               <div className='desc-title'>
                 {ch.name}
                 {ch.index === currentId && <span className='challenge-current-tag'>本週挑戰</span>}
@@ -78,10 +97,10 @@ export default function Challenges() {
               <div className='challenge-row'>
                 <div className='challenge-row-label'>裝備</div>
                 <div className='challenge-flow'>
-                  {sortEquips(ch.available_equipment || []).map(eq => (
-                    <span key={`${eq.name}-${eq.tier}`} className={`equip-tag eq-t${eq.tier}`}>
+                  {mergeMissingEquips(ch.available_equipment).map(eq => (
+                    <span key={`${eq.name}-${eq.tier}`} className={`equip-tag ${eq.missing ? 'eq-t-missing' : `eq-t${eq.tier}`}`}>
                       <span className="equip-name">{eq.name}</span>
-                      <span className="equip-meta">T{eq.tier}</span>
+                      {!eq.missing && <span className="equip-meta">T{eq.tier}</span>}
                     </span>
                   ))}
                 </div>

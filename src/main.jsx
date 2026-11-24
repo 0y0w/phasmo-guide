@@ -1,6 +1,6 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 
 import App from './App.jsx'
 import EvFilter from './EvFilter.jsx'
@@ -20,11 +20,22 @@ import TOC from './TOC.jsx'
 
 import './App.css'
 
+// 每次路由跳轉時回到頁面最上方；帶 hash 的錨點跳轉（如 /#aswang）不干擾
+export function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) return; // 錨點跳轉由各頁自行 scrollIntoView
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <TOC />
     <BrowserRouter basename='/phasmo-guide'>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/evfilter" element={<EvFilter />} />

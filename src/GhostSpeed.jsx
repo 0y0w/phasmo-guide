@@ -38,7 +38,7 @@ export default function GhostSpeed() {
               </tr>
               {ghostsData.map(ghost =>(
                 <tr key={ghost.id}>
-                  <td><Link to={`/ghosts/${ghost.id}`} className='speed-link' >{ghost.name}</ Link></td>
+                  <td><Link to={`/#${ghost.id}`} className='speed-link' >{ghost.name}</ Link></td>
                   <td className='speed-slow'>{ghost.basicSpeed?.[0] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${currentSpeed.value}/${ghost.basicSpeed[0]}.mp3`} />}{ghost.basicSpeed[0]}</td>
                   <td className='speed-normal'>{ghost.basicSpeed?.[1] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${currentSpeed.value}/${ghost.basicSpeed[1]}.mp3`} />}{ghost.basicSpeed[1]}</td>
                   <td className='speed-fast'>{ghost.basicSpeed?.[2] && <SoundPlayer src={`${import.meta.env.BASE_URL}audio/${currentSpeed.value}/${ghost.basicSpeed[2]}.mp3`} />}{ghost.basicSpeed[2]}</td>
