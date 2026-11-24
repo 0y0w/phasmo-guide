@@ -3,7 +3,10 @@ name: Deploy static content to Pages
 on:
   # 當有程式碼 push 到 main 分支時觸發自動部署
   push:
-    branches: ['main'] # 如果你的預設分支是 master，請將這裡改成 master
+    branches: ['main']
+
+  # 允許從 Actions 分頁手動重跑
+  workflow_dispatch:
 
 # 設定 GITHUB_TOKEN 的權限，允許部署到 GitHub Pages
 permissions:
@@ -13,15 +16,12 @@ permissions:
 
 # 確保不會有多個部署任務同時進行，較新的 push 會取消舊的排程
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
   # 打包任務
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,20 +34,25 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install # 如果你的專案沒有 package-lock.json，請將這行改成 npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          # Vite 打包後預設會輸出到 dist 資料夾
+          name: github-pages
           path: './dist'
 
+  # 部署任務
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
